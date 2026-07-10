@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORENA FOREIGN EMPLOYMENT AGENT PLC</title>
     <style>
-        /* Base Styles & Green/White Theme */
+        /* Base Colors & Blue-Greenish (Teal) Theme */
         :root {
             --bg-white: #ffffff;
-            --bg-light-green: #f0fdf4;
-            --main-green: #15803d;
-            --accent-green: #22c55e;
-            --text-dark: #1f2937;
-            --text-gray: #4b5563;
+            --bg-light-teal: #f4fbfc;
+            --main-teal: #0d6e75;
+            --accent-teal: #14b8a6;
+            --text-dark: #111c1d;
+            --text-gray: #4b5859;
+            --card-border: #e0f2f1;
         }
         
         body {
@@ -23,43 +24,42 @@
             overflow-x: hidden;
         }
 
-        /* Language Toggle Logic */
+        /* Language Toggle Framework */
         .lang-am, .lang-ar { display: none; }
         body.am .lang-en, body.am .lang-ar { display: none; }
         body.am .lang-am { display: inline-block; }
         body.ar .lang-en, body.ar .lang-am { display: none; }
         body.ar .lang-ar { display: inline-block; direction: rtl; }
         
-        /* Sticky Header & Navigation */
+        /* Sticky Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.96);
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(21, 128, 61, 0.15);
+            box-shadow: 0 2px 20px rgba(13, 110, 117, 0.1);
             box-sizing: border-box;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: var(--main-green);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--main-teal);
+            letter-spacing: 0.5px;
         }
 
         .lang-selector select {
             background: var(--bg-white);
-            color: var(--main-green);
-            border: 2px solid var(--main-green);
-            padding: 5px 10px;
-            border-radius: 5px;
+            color: var(--main-teal);
+            border: 2px solid var(--main-teal);
+            padding: 6px 12px;
+            border-radius: 6px;
             font-weight: bold;
             outline: none;
             cursor: pointer;
@@ -67,152 +67,218 @@
         }
 
         .lang-selector select:hover {
-            background: var(--main-green);
+            background: var(--main-teal);
             color: var(--bg-white);
         }
 
         /* Hero Section */
         .hero {
-            padding: 160px 20px 100px;
+            padding: 170px 20px 90px;
             text-align: center;
-            background: linear-gradient(135deg, var(--bg-light-green) 0%, var(--bg-white) 100%);
-            border-bottom: 2px solid var(--accent-green);
+            background: linear-gradient(180deg, var(--bg-light-teal) 0%, var(--bg-white) 100%);
+            border-bottom: 1px solid var(--card-border);
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
-            color: var(--main-green);
+            color: var(--main-teal);
         }
 
         h2 {
             color: var(--text-dark);
             font-weight: 600;
-        }
-        
-        p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
         }
 
+        /* Dual-Action Buttons */
         .dual-buttons {
-            margin-top: 40px;
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            margin-top: 25px;
         }
 
         .btn {
-            padding: 15px 30px;
-            border: 2px solid var(--main-green);
+            padding: 15px 35px;
+            border: 2px solid var(--main-teal);
             border-radius: 30px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .btn-primary {
-            background: var(--main-green);
+            background: var(--main-teal);
             color: var(--bg-white);
-            box-shadow: 0 4px 15px rgba(21, 128, 61, 0.3);
+            box-shadow: 0 4px 15px rgba(13, 110, 117, 0.25);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--main-green);
+            color: var(--main-teal);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(21, 128, 61, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 110, 117, 0.35);
         }
 
         .btn-outline:hover {
-            background: var(--main-green);
+            background: var(--main-teal);
             color: var(--bg-white);
         }
 
-        /* Layout & Containers */
+        /* Containers & Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
         .section-title {
             text-align: center;
-            color: var(--main-green);
-            margin-bottom: 40px;
-            font-size: 2.2rem;
+            color: var(--main-teal);
+            margin-bottom: 45px;
+            font-size: 2rem;
         }
 
-        /* Cards for Workflow & Benefits */
+        /* Trust Banner */
+        .trust-banner {
+            background: var(--main-teal);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            margin: -20px auto 50px;
+            max-width: 900px;
+            box-shadow: 0 8px 25px rgba(13, 110, 117, 0.15);
+        }
+
+        .trust-banner h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: #ccfbf1;
+        }
+
+        .trust-banner p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Country Destination Flags Lanes */
+        .flags-lane {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .flag-card {
+            background: var(--bg-white);
+            border: 2px solid var(--card-border);
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .flag-card:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(13, 110, 117, 0.1);
+        }
+
+        .flag-graphic {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .flag-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: var(--main-teal);
+        }
+
+        .flag-card p {
+            margin: 0;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Grid Framework for Workflow */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .card {
             background: var(--bg-white);
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--card-border);
             padding: 30px 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-top: 4px solid var(--accent-green);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-top: 4px solid var(--main-teal);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(21, 128, 61, 0.15);
-        }
-        
-        .card h3 {
-            color: var(--main-green);
-            margin-top: 0;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(13, 110, 117, 0.12);
         }
 
-        /* Salary Table */
+        .card h3 {
+            color: var(--main-teal);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             background: var(--bg-white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e5e7eb;
         }
 
         th, td {
-            padding: 18px 15px;
+            padding: 16px 20px;
             text-align: left;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--card-border);
         }
 
         th {
-            background: var(--main-green);
+            background: var(--main-teal);
             color: var(--bg-white);
             font-weight: 600;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 0.9rem;
-        }
-        
-        tr:hover {
-            background-color: var(--bg-light-green);
         }
 
-        /* Pop-in Animation Classes */
+        tr:hover {
+            background-color: var(--bg-light-teal);
+        }
+
+        /* Pop-In Animations */
         .pop-in {
             opacity: 0;
-            transform: scale(0.9) translateY(20px);
-            transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                        transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: scale(0.92) translateY(25px);
+            transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .pop-in.visible {
@@ -222,37 +288,22 @@
 
         /* Footer */
         footer {
-            background: var(--main-green);
+            background: var(--main-teal);
             color: var(--bg-white);
             padding: 50px 20px;
             text-align: center;
-        }
-        
-        footer h3 {
-            color: var(--bg-white);
-            margin-bottom: 15px;
-        }
-        
-        footer p {
-            color: #d1fae5;
+            border-top: 3px solid var(--accent-teal);
         }
 
-        footer a {
-            color: #bbf7d0;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        
-        footer a:hover {
-            color: var(--bg-white);
-        }
+        footer p { color: #e2f7f5; }
+        footer a { color: #ffffff; text-decoration: underline; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Header -->
+    <!-- Sticky Header Area -->
     <header>
-        <div class="logo">BORENA PLC</div>
+        <div class="logo">BORENA AGENCY</div>
         <div class="lang-selector">
             <select id="languageToggle" onchange="changeLanguage()">
                 <option value="en">English</option>
@@ -262,7 +313,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Hero Section -->
     <section class="hero">
         <h1 class="pop-in">
             <span class="lang-en">Borena Foreign Employment Agent</span>
@@ -270,125 +321,169 @@
             <span class="lang-ar">وكالة بورينا للتوظيف الخارجي</span>
         </h1>
         <h2 class="pop-in">
-            <span class="lang-en">Registered & Licensed in Ethiopia</span>
-            <span class="lang-am">በኢትዮጵያ የተመዘገበ እና ፈቃድ ያለው</span>
-            <span class="lang-ar">مسجلة ومرخصة في إثيوبيا</span>
+            <span class="lang-en">Connecting Professional Ethiopian Talent Globally</span>
+            <span class="lang-am">ፕሮፌሽናል የሆኑ የሀገር ውስጥ ባለሙያዎችን ከአለም ጋር ማገናኘት</span>
+            <span class="lang-ar">ربط الكفاءات الإثيوبية المهنية عالميًا</span>
         </h2>
-        <p class="pop-in">
-            <span class="lang-en">Official Partner for Saudi Arabia 🇸🇦, UAE 🇦🇪, and Kuwait 🇰🇼</span>
-            <span class="lang-am">ለሳውዲ አረቢያ፣ አረብ ኢሚሬትስ እና ኩዌት ኦፊሴላዊ አጋር</span>
-            <span class="lang-ar">شريك رسمي للمملكة العربية السعودية والإمارات والكويت</span>
-        </p>
 
+        <!-- Dual Action Functional Buttons -->
         <div class="dual-buttons pop-in">
             <a href="mailto:borenaa516@gmail.com" class="btn btn-primary">
-                <span class="lang-en">Request Manpower</span>
-                <span class="lang-am">የሰው ኃይል ይጠይቁ</span>
-                <span class="lang-ar">طلب عمالة</span>
+                <span class="lang-en">Request Manpower / Partner With Us</span>
+                <span class="lang-am">የሰው ኃይል ይጠይቁ / ከእኛ ጋር አጋር ይሁኑ</span>
+                <span class="lang-ar">طلب عمالة / الشراكة معنا</span>
             </a>
             <a href="mailto:borenaa516@gmail.com" class="btn btn-outline">
-                <span class="lang-en">Register to Work</span>
-                <span class="lang-am">ለመስራት ይመዝገቡ</span>
-                <span class="lang-ar">سجل للعمل</span>
+                <span class="lang-en">Register to Work / ይመዝገቡ</span>
+                <span class="lang-am">ለመስራት ይመዝገቡ / ምዝገባ</span>
+                <span class="lang-ar">سجل للعمل / التسجيل</span>
             </a>
         </div>
     </section>
 
-    <!-- Recruitment Workflow -->
+    <!-- Trust Credentials & Lanes Display -->
     <section class="container">
-        <h2 class="section-title pop-in">
-            <span class="lang-en">Our Recruitment Workflow</span>
-            <span class="lang-am">የምልመላ ሂደታችን</span>
-            <span class="lang-ar">سير عمل التوظيف لدينا</span>
-        </h2>
         
-        <div class="grid-3">
-            <div class="card pop-in">
-                <h3>1. Sourcing & Screening</h3>
-                <p class="lang-en">Rigorous background checks, initial interviews, and verifying candidates' clean records.</p>
-                <p class="lang-am">ጥብቅ የጀርባ ምርመራዎች እና የመጀመሪያ ቃለ-መጠይቆች።</p>
-                <p class="lang-ar">فحوصات خلفية صارمة ومقابلات أولية.</p>
+        <!-- Compliance & Authority Banner -->
+        <div class="trust-banner pop-in">
+            <h3>
+                <span class="lang-en">✓ Legitimate, Licensed Legal Entity</span>
+                <span class="lang-am">✓ ህጋዊ እና የተረጋገጠ የቅጥር ኤጀንሲ</span>
+                <span class="lang-ar">✓ كيان قانوني معتمد ومرخص رسميًا</span>
+            </h3>
+            <p>
+                <span class="lang-en">Fully compliant under Ethiopia's Overseas Employment Proclamations No. 923/2016 & 1246/2021[cite: 1]. Authorized by the Ministry of Labor[cite: 1].</span>
+                <span class="lang-am">በኢትዮጵያ የውጪ ሀገር ሥራ ሥምሪት አዋጅ ቁጥር 923/2008 እና 1246/2013 መሰረት የተመዘገበ[cite: 1]።</span>
+                <span class="lang-ar">متوافق تمامًا مع قوانين التوظيف الخارجي الإثيوبية رقم 923/2016 و 1246/2021[cite: 1].</span>
+            </p>
+        </div>
+
+        <h3 class="section-title pop-in">
+            <span class="lang-en">Our Primary Destination Lanes</span>
+            <span class="lang-am">ዋና ዋና የመዳረሻ ገበያዎቻችን</span>
+            <span class="lang-ar">مسارات وجهاتنا الرئيسية</span>
+        </h3>
+
+        <!-- Country Destinations & Flag Displays -->
+        <div class="flags-lane pop-in">
+            <div class="flag-card">
+                <span class="flag-graphic">🇸🇦</span>
+                <h4>Saudi Arabia[cite: 1]</h4>
+                <p class="lang-en">Full electronic e-contract processing integration via the Musaned government platform[cite: 1].</p>
+                <p class="lang-am">በሙሳነድ የኤሌክትሮኒክስ መድረክ በኩል የተሟላ የቪዛ እና የውል አሠራር[cite: 1]።</p>
+                <p class="lang-ar">تكامل كامل لمعالجة العقود الإلكترونية عبر منصة مساند الحكومية[cite: 1].</p>
             </div>
-            <div class="card pop-in">
-                <h3>2. Medical Clearance</h3>
-                <p class="lang-en">Ensuring full compliance with strict GCC visa health standards and GAMCA approvals.</p>
-                <p class="lang-am">የጂሲሲ የቪዛ የጤና መስፈርቶችን ማሟላት።</p>
-                <p class="lang-ar">ضمان الامتثال الكامل لمعايير الصحة لتاشيرات دول مجلس التعاون الخليجي.</p>
+            <div class="flag-card">
+                <span class="flag-graphic">🇦🇪</span>
+                <h4>United Arab Emirates[cite: 1]</h4>
+                <p class="lang-en">Direct deployment lanes serving premium domestic help markets and commercial contracts[cite: 1].</p>
+                <p class="lang-am">ለቤት ሰራተኞች እና ለተለያዩ የስራ ክፍሎች ቀጥተኛ የስራ ስምሪት መላኪያ መስመር[cite: 1]።</p>
+                <p class="lang-ar">مسارات توظيف مباشرة تخدم أسواق العمل المنزلي والتجاري المميز[cite: 1].</p>
             </div>
-            <div class="card pop-in">
-                <h3>3. Pre-Departure Training</h3>
-                <p class="lang-en">Language training, cultural orientation, and skill development for destination standards.</p>
-                <p class="lang-am">የቋንቋ ስልጠና እና የባህል ግንዛቤ።</p>
-                <p class="lang-ar">التدريب اللغوي والتوجيه الثقافي.</p>
+            <div class="flag-card">
+                <span class="flag-graphic">🇰🇼</span>
+                <h4>Kuwait[cite: 1]</h4>
+                <p class="lang-en">Secure placements monitored safely via the Public Authority for Manpower rules[cite: 1].</p>
+                <p class="lang-am">በሕዝብ የሰው ኃይል ባለሥልጣን ደንብ መሠረት ጥበቃ የሚደረግለት የሥራ ቅጥር[cite: 1]።</p>
+                <p class="lang-ar">توظيف آمن ومراقب وفقًا للوائح الهيئة العامة للقوى العاملة[cite: 1].</p>
             </div>
         </div>
     </section>
 
-    <!-- Salary Matrix -->
-    <section class="container" style="background-color: var(--bg-light-green); border-radius: 15px; margin-bottom: 40px;">
-        <h2 class="section-title pop-in">
-            <span class="lang-en">Salary Matrix & Job Categories</span>
-            <span class="lang-am">የደመወዝ መዋቅር እና የስራ ክፍሎች</span>
-            <span class="lang-ar">مصفوفة الرواتب وفئات الوظائف</span>
+    <!-- Operational Workflow -->
+    <section class="container" style="background-color: var(--bg-light-teal); border-radius: 16px;">
+        <h2 class="section-title pop-in" style="padding-top: 30px;">
+            <span class="lang-en">Recruitment Workflow Pipeline</span>
+            <span class="lang-am">የምልመላ እና የዝግጅት ሂደቶች</span>
+            <span class="lang-ar">مراحل سير عمل التوظيف</span>
         </h2>
         
-        <div class="pop-in" style="overflow-x: auto;">
+        <div class="grid-3" style="padding-bottom: 40px;">
+            <div class="card pop-in">
+                <h3>1. Sourcing & Screening[cite: 1]</h3>
+                <p class="lang-en">Rigorous candidate evaluations, clean background records check, and profiling[cite: 1].</p>
+                <p class="lang-am">ጥብቅ የጀርባ ታሪክ ምርመራ እና የመጀመሪያ ደረጃ ምልመላ[cite: 1]።</p>
+                <p class="lang-ar">تقييم صارم للمرشحين وفحص السجلات الخلفية النظيفة[cite: 1].</p>
+            </div>
+            <div class="card pop-in">
+                <h3>2. Medical Fitness Clearance[cite: 1]</h3>
+                <p class="lang-en">Ensuring full physical compliance with strict GCC visa health standards via GAMCA[cite: 1].</p>
+                <p class="lang-am">የጂሲሲ የጤና መስፈርቶችን ማሟላታቸውን ማረጋገጥ[cite: 1]።</p>
+                <p class="lang-ar">ضمان اللياقة الطبية الكاملة وامتثالها لمعايير دول مجلس التعاون الخليجي عبر جامكا[cite: 1].</p>
+            </div>
+            <div class="card pop-in">
+                <h3>3. Pre-Departure Orientation[cite: 1]</h3>
+                <p class="lang-en">Thorough language training basics (Arabic) and complete Middle Eastern cultural preparation[cite: 1].</p>
+                <p class="lang-am">መሰረታዊ የቋንቋ ስልጠና እና የባህል ግንዛቤ ዝግጅት[cite: 1]።</p>
+                <p class="lang-ar">تدريب لغوي أساسي مكثف وتوجيه ثقافي كامل للشرق الأوسط[cite: 1].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salary Structure & Packages Section -->
+    <section class="container">
+        <h2 class="section-title pop-in">
+            <span class="lang-en">Job Categories & Salary Ranges</span>
+            <span class="lang-am">የስራ መደቦች እና የደመወዝ መጠን</span>
+            <span class="lang-ar">فئات الوظائف ونطاقات الرواتب</span>
+        </h2>
+        
+        <div class="table-responsive pop-in">
             <table>
                 <thead>
                     <tr>
                         <th>Destination</th>
-                        <th>Job Category</th>
-                        <th>Experience</th>
-                        <th>Monthly Salary</th>
+                        <th>Job Role</th>
+                        <th>Experience Level</th>
+                        <th>Salary Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>🇸🇦 Saudi Arabia</td>
-                        <td>Housemaid</td>
-                        <td>Fresh / First Time</td>
-                        <td>1,000 SAR</td>
+                        <td>🇸🇦 Saudi Arabia[cite: 1]</td>
+                        <td>Housemaid / Domestic Helper[cite: 1]</td>
+                        <td>Fresh / First Time[cite: 1]</td>
+                        <td>1,000 SAR[cite: 1]</td>
                     </tr>
                     <tr>
-                        <td>🇸🇦 Saudi Arabia</td>
-                        <td>Housemaid</td>
-                        <td>2+ Years Gulf Exp.</td>
-                        <td>1,200 SAR</td>
+                        <td>🇸🇦 Saudi Arabia[cite: 1]</td>
+                        <td>Housemaid / Domestic Helper[cite: 1]</td>
+                        <td>2+ Years Gulf Exp.[cite: 1]</td>
+                        <td>1,200 SAR[cite: 1]</td>
                     </tr>
                     <tr>
-                        <td>🇰🇼 Kuwait</td>
-                        <td>Housemaid</td>
-                        <td>Fresh / First Time</td>
-                        <td>100 KWD</td>
+                        <td>🇰🇼 Kuwait[cite: 1]</td>
+                        <td>Housemaid / Domestic Helper[cite: 1]</td>
+                        <td>Fresh / First Time[cite: 1]</td>
+                        <td>100 KWD[cite: 1]</td>
                     </tr>
                     <tr>
-                        <td>🇦🇪 UAE</td>
-                        <td>Housemaid</td>
-                        <td>Fresh / First Time</td>
-                        <td>1,000 AED</td>
+                        <td>🇦🇪 UAE[cite: 1]</td>
+                        <td>Housemaid / Domestic Helper[cite: 1]</td>
+                        <td>Fresh / First Time[cite: 1]</td>
+                        <td>1,000 AED[cite: 1]</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
+    <!-- Fixed Footer -->
     <footer>
-        <h3 class="pop-in">BORENA FOREIGN EMPLOYMENT AGENT PLC</h3>
+        <h3 class="pop-in">BORENA FOREIGN EMPLOYMENT AGENT PLC[cite: 1]</h3>
         <p class="pop-in">
-            <span class="lang-en">Arada Sub City, Woreda 05, House No. 845, Addis Ababa, Ethiopia</span>
-            <span class="lang-am">አራዳ ክፍለ ከተማ፣ ወረዳ 05፣ የቤት ቁጥር 845፣ አዲስ አበባ</span>
-            <span class="lang-ar">منطقة أرادا الفرعية، وريدا 05، منزل رقم 845، أديس أبابا</span>
+            <span class="lang-en">Arada Sub City, Woreda 05, House No. 82, Kebele 845, Addis Ababa, Ethiopia[cite: 1]</span>
+            <span class="lang-am">አራዳ ክፍለ ከተማ፣ ወረዳ 05፣ የቤት ቁጥር 82፣ ቀበሌ 845፣ አዲስ አበባ፣ ኢትዮጵያ[cite: 1]</span>
+            <span class="lang-ar">منطقة أرادا الفرعية، وريدا 05، منزل رقم 82، كبيلي 845، أديس أبابا، إثيوبيا[cite: 1]</span>
         </p>
-        <p class="pop-in" style="margin-top: 20px; font-size: 1.1rem;">
-            📞 <strong>WhatsApp / Telegram:</strong> <a href="tel:0908104444">0908 10 44 44</a><br><br>
-            ✉️ <strong>Email:</strong> <a href="mailto:borenaa516@gmail.com">borenaa516@gmail.com</a>
+        <p class="pop-in" style="margin-top: 25px; font-size: 1.1rem;">
+            📞 <strong>WhatsApp / Telegram:</strong> <a href="tel:0908104444">0908 10 44 44</a>[cite: 1]<br><br>
+            ✉️ <strong>Email Address:</strong> <a href="mailto:borenaa516@gmail.com">borenaa516@gmail.com</a>[cite: 1]
         </p>
     </footer>
 
-    <!-- Scripts for Functionality and Animation -->
+    <!-- Javascript Animation Control and Switching Engine -->
     <script>
-        // Language Toggler Logic
         function changeLanguage() {
             const lang = document.getElementById('languageToggle').value;
             document.body.className = ''; 
@@ -397,12 +492,11 @@
             }
         }
 
-        // Intersection Observer for Pop-In Animations
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.15
+                threshold: 0.12
             };
 
             const observer = new IntersectionObserver((entries) => {
