@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORENA FOREIGN EMPLOYMENT AGENT PLC</title>
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* Base Colors & Dark Neon Blue-Green Theme */
         :root {
@@ -32,21 +34,64 @@
         body.ar .lang-en, body.ar .lang-am { display: none; }
         body.ar .lang-ar { display: inline-block; direction: rtl; }
         
-        /* Sticky Header */
+        /* Two-Tier Enhanced Sticky Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(5, 12, 14, 0.95);
-            padding: 15px 30px;
+            background: rgba(5, 12, 14, 0.98);
+            z-index: 1000;
+            box-shadow: 0 2px 25px rgba(0, 255, 213, 0.15);
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px 20px;
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 255, 213, 0.2);
-            box-sizing: border-box;
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(0, 255, 213, 0.1);
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+        }
+
+        .header-contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--text-muted);
+            transition: color 0.3s;
+        }
+
+        .info-item:hover {
+            color: var(--neon-teal);
+        }
+
+        .info-item i {
+            color: var(--neon-blue-green);
+            text-shadow: var(--neon-glow-blue);
+        }
+
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -55,30 +100,106 @@
             color: #ffffff;
             letter-spacing: 1px;
             text-shadow: var(--neon-glow-teal);
+            text-decoration: none;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Neon Icon Links */
+        .social-icons-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-btn {
+            color: var(--neon-teal);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            text-shadow: var(--neon-glow-teal);
+            text-decoration: none;
+        }
+
+        .icon-btn:hover {
+            color: #ffffff;
+            transform: scale(1.15);
+            text-shadow: 0 0 15px var(--neon-teal);
+        }
+
+        /* Instant WhatsApp Buttons */
+        .btn-whatsapp-header {
+            background: rgba(0, 255, 213, 0.1);
+            border: 1px solid var(--neon-teal);
+            color: var(--neon-teal);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 0 10px rgba(0, 255, 213, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp-header:hover {
+            background: var(--neon-teal);
+            color: var(--bg-dark);
+            box-shadow: var(--neon-glow-teal);
+            transform: translateY(-1px);
+        }
+
+        .btn-whatsapp-footer {
+            background: transparent;
+            border: 2px solid var(--neon-teal);
+            color: var(--neon-teal);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: inset 0 0 15px rgba(0, 255, 213, 0.05), var(--neon-glow-teal);
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp-footer:hover {
+            background: var(--neon-teal);
+            color: var(--bg-dark);
+            box-shadow: 0 0 25px var(--neon-teal), 0 0 50px var(--neon-teal);
+            transform: scale(1.03);
         }
 
         .lang-selector select {
             background: var(--bg-dark);
-            color: var(--neon-teal);
-            border: 2px solid var(--neon-teal);
-            padding: 6px 12px;
+            color: var(--neon-blue-green);
+            border: 1px solid var(--neon-blue-green);
+            padding: 5px 10px;
             border-radius: 6px;
             font-weight: bold;
             outline: none;
             cursor: pointer;
-            box-shadow: 0 0 8px rgba(0, 255, 213, 0.3);
+            box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
             transition: all 0.3s;
         }
 
         .lang-selector select:hover {
-            background: var(--neon-teal);
+            background: var(--neon-blue-green);
             color: var(--bg-dark);
-            box-shadow: var(--neon-glow-teal);
+            box-shadow: var(--neon-glow-blue);
         }
 
         /* Hero Section */
         .hero {
-            padding: 190px 20px 110px;
+            padding: 210px 20px 110px;
             text-align: center;
             background: radial-gradient(circle at center, #0d2327 0%, var(--bg-dark) 100%);
             border-bottom: 1px solid rgba(0, 191, 255, 0.2);
@@ -234,46 +355,64 @@
             line-height: 1.5;
         }
 
-        /* Grid Framework for Workflow */
-        .grid-3 {
+        /* Step Process Grid Framework for Workflow & B2B Partner Portal */
+        .grid-4 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
-        .card {
+        .card-step {
             background: var(--card-dark);
-            border: 1px solid rgba(0, 255, 213, 0.2);
-            padding: 30px 25px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            padding: 25px 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            position: relative;
             transition: all 0.3s ease;
         }
 
-        .card:hover {
-            border-color: var(--neon-teal);
-            transform: translateY(-5px);
-            box-shadow: var(--neon-glow-teal), inset 0 0 15px rgba(0, 255, 213, 0.1);
+        .card-step:hover {
+            border-color: var(--neon-blue-green);
+            transform: translateY(-4px);
+            box-shadow: var(--neon-glow-blue), inset 0 0 12px rgba(0, 191, 255, 0.1);
         }
 
-        .card h3 {
-            color: var(--neon-teal);
-            margin-top: 0;
-            font-size: 1.3rem;
-            text-shadow: var(--neon-glow-teal);
+        .step-badge {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--neon-blue-green);
+            color: var(--bg-dark);
+            font-weight: bold;
+            font-size: 0.8rem;
+            padding: 3px 12px;
+            border-radius: 10px;
+            box-shadow: var(--neon-glow-blue);
+            text-transform: uppercase;
         }
 
-        .card p {
+        .card-step h4 {
+            color: #ffffff;
+            margin: 15px 0 10px 0;
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+
+        .card-step p {
             color: var(--text-muted);
+            font-size: 0.9rem;
             line-height: 1.5;
+            margin: 0;
         }
 
-        /* Tables */
+        /* Tables & Matrix Styling */
         .table-responsive {
             overflow-x: auto;
             box-shadow: 0 0 25px rgba(0, 255, 213, 0.05);
             border-radius: 10px;
             border: 2px solid rgba(0, 255, 213, 0.2);
+            margin-bottom: 40px;
         }
 
         table {
@@ -296,6 +435,11 @@
             text-transform: uppercase;
             text-shadow: var(--neon-glow-teal);
             border-bottom: 2px solid var(--neon-teal);
+        }
+
+        td strong {
+            color: var(--neon-blue-green);
+            text-shadow: rgba(0, 191, 255, 0.2);
         }
 
         tr:hover {
@@ -332,21 +476,58 @@
         }
 
         footer p { color: var(--text-muted); }
-        footer a { color: var(--neon-blue-green); text-decoration: none; font-weight: bold; text-shadow: var(--neon-glow-blue); }
-        footer a:hover { text-decoration: underline; color: #ffffff; }
+        footer a.footer-contact-link { color: var(--neon-blue-green); text-decoration: none; font-weight: bold; text-shadow: var(--neon-glow-blue); }
+        footer a.footer-contact-link:hover { text-decoration: underline; color: #ffffff; }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Header Area -->
+    <!-- Enhanced Sticky Header Area -->
     <header>
-        <div class="logo">BORENA AGENCY</div>
-        <div class="lang-selector">
-            <select id="languageToggle" onchange="changeLanguage()">
-                <option value="en">English</option>
-                <option value="am">አማርኛ (Amharic)</option>
-                <option value="ar">العربية (Arabic)</option>
-            </select>
+        <div class="header-container">
+            <!-- Top Metadata Information Bar -->
+            <div class="header-top">
+                <div class="header-contact-info">
+                    <a href="tel:0908104444" class="info-item">[cite: 1]
+                        <i class="fas fa-phone"></i> <span>0908 10 44 44</span>[cite: 1]
+                    </a>
+                    <a href="mailto:borenaa516@gmail.com" class="info-item">[cite: 1]
+                        <i class="fas fa-envelope"></i> <span>borenaa516@gmail.com</span>[cite: 1]
+                    </a>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="lang-en">Mon - Sat: 8:00 AM - 6:00 PM</span>
+                        <span class="lang-am">ሰኞ - ቅዳሜ፡ ከጠዋቱ 2፡00 - ከሰዓት 12፡00</span>
+                        <span class="lang-ar">الإثنين - السبت: 8:00 ص - 6:00 م</span>
+                    </div>
+                </div>
+                <!-- Mini Social Channel Action Row -->
+                <div class="social-icons-group">
+                    <a href="https://wa.me/251908104444" target="_blank" class="icon-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/0908104444" target="_blank" class="icon-btn" title="Telegram Channel"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation & Conversion Bar -->
+            <div class="header-bottom">
+                <a href="#" class="logo">BORENA AGENCY</a>
+                <div class="header-actions">
+                    <!-- 1-Click Instant Header WhatsApp Hook -->
+                    <a href="https://wa.me/251908104444" target="_blank" class="btn-whatsapp-header">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="lang-en">WhatsApp Chat</span>
+                        <span class="lang-am">ዋትስአፕ ማውሪያ</span>
+                        <span class="lang-ar">دردشة واتساب</span>
+                    </a>
+                    <div class="lang-selector">
+                        <select id="languageToggle" onchange="changeLanguage()">
+                            <option value="en">English</option>
+                            <option value="am">አማርኛ (Amharic)</option>
+                            <option value="ar">العربية (Arabic)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -365,12 +546,12 @@
 
         <!-- Dual Action Functional Buttons -->
         <div class="dual-buttons pop-in">
-            <a href="mailto:borenaa516@gmail.com" class="btn btn-primary">
+            <a href="mailto:borenaa516@gmail.com" class="btn btn-primary">[cite: 1]
                 <span class="lang-en">Request Manpower / Partner With Us</span>
                 <span class="lang-am">የሰው ኃይል ይጠይቁ / ከእኛ ጋር አጋር ይሁኑ</span>
                 <span class="lang-ar">طلب عمالة / الشراكة معنا</span>
             </a>
-            <a href="mailto:borenaa516@gmail.com" class="btn btn-outline">
+            <a href="mailto:borenaa516@gmail.com" class="btn btn-outline">[cite: 1]
                 <span class="lang-en">Register to Work / ይመዝገቡ</span>
                 <span class="lang-am">ለመስራት ይመዝገቡ / ምዝገባ</span>
                 <span class="lang-ar">سجل للعمل / التسجيل</span>
@@ -427,78 +608,99 @@
         </div>
     </section>
 
-    <!-- Operational Workflow -->
+    <!-- NEW SECTION: B2B Partner Portal & Process -->
     <section class="container" style="background-color: rgba(13, 35, 39, 0.4); border-radius: 16px; border: 1px solid rgba(0, 191, 255, 0.1);">
         <h2 class="section-title pop-in" style="padding-top: 30px;">
-            <span class="lang-en">Recruitment Workflow Pipeline</span>
-            <span class="lang-am">የምልመላ እና የዝግጅት ሂደቶች</span>
-            <span class="lang-ar">مراحل سير عمل التوظيف</span>
+            <span class="lang-en">B2B Gulf Partner Onboarding Process</span>
+            <span class="lang-am">ለባህረ ሰላጤው አጋሮች የተዘጋጀ ህጋዊ የስራ ሂደት</span>
+            <span class="lang-ar">إجراءات تسجيل وإلحاق الشركاء في الخليج</span>
         </h2>
         
-        <div class="grid-3" style="padding-bottom: 40px;">
-            <div class="card pop-in">
-                <h3>1. Sourcing & Screening[cite: 1]</h3>
-                <p class="lang-en">Rigorous candidate evaluations, clean background records check, and profiling[cite: 1].</p>
-                <p class="lang-am">ጥብቅ የጀርባ ታሪክ ምርመራ እና የመጀመሪያ ደረጃ ምልመላ[cite: 1]。</p>
-                <p class="lang-ar">تقييم صارم للمرشحين وفحص السجلات الخلفية النظيفة[cite: 1].</p>
+        <div class="grid-4" style="padding-bottom: 40px; padding-left: 15px; padding-right: 15px;">
+            <div class="card-step pop-in">
+                <div class="step-badge">Step 1</div>
+                <h4>
+                    <span class="lang-en">Agency Attestation</span>
+                    <span class="lang-am">ኤጀንሲ ማረጋገጫና ምስክርነት</span>
+                    <span class="lang-ar">توثيق الوكالة والاعتماد</span>
+                </h4>
+                <p class="lang-en">Verify the Gulf agency/sponsor via the Ethiopian Embassy. Generate and upload Job Orders onto the official E-LMIS platform.</p>
+                <p class="lang-am">የባህረ ሰላጤው ኤጀንሲ በኢትዮጵያ ኤምባሲ በኩል ይረጋገጣል። የፍላጎት ደብዳቤ በይፋዊው የኢ-LMIS መድረክ ላይ ይሰቀላል።</p>
+                <p class="lang-ar">التحقق من وكالة الخليج أو الكفيل عبر السفارة الإثيوبية. توليد ورفع تفويض العمل / طلب العمالة على منصة E-LMIS الحكومية.</p>
             </div>
-            <div class="card pop-in">
-                <h3>2. Medical Fitness Clearance[cite: 1]</h3>
-                <p class="lang-en">Ensuring full physical compliance with strict GCC visa health standards via GAMCA[cite: 1].</p>
-                <p class="lang-am">የጂሲሲ የጤና መስፈርቶችን ማሟላታቸውን ማረጋገጥ[cite: 1]。</p>
-                <p class="lang-ar">ضمان اللياقة الطبية الكاملة وامتثالها لمعايير دول مجلس التعاون الخليجي عبر جامكا[cite: 1].</p>
+            <div class="card-step pop-in">
+                <div class="step-badge">Step 2</div>
+                <h4>
+                    <span class="lang-en">Sourcing & E-LMIS</span>
+                    <span class="lang-am">ምልመላ እና ምዝገባ</span>
+                    <span class="lang-ar">الاستقطاب والتسجيل</span>
+                </h4>
+                <p class="lang-en">Source candidates legally. Candidates are fully registered in national Labour Systems and meet the 25-year-old minimum age rule.</p>
+                <p class="lang-am">ሰራተኞችን በህጋዊ መንገድ መመልመል። በሀገር አቀፍ የላብራቶሪ ሲስተም መመዝገብ እና የ 25 አመት እድሜ መሙላታቸውን ማረጋገጥ።</p>
+                <p class="lang-ar">استقطاب المرشحين قانونيًا. التأكد من تسجيلهم بنظام معلومات سوق العمل الوطني واستيفاء شرط السن (25 عامًا للعمالة المنزلية).</p>
             </div>
-            <div class="card pop-in">
-                <h3>3. Pre-Departure Orientation[cite: 1]</h3>
-                <p class="lang-en">Thorough language training basics (Arabic) and complete Middle Eastern cultural preparation[cite: 1].</p>
-                <p class="lang-am">መሰረታዊ የቋንቋ ስልጠና እና የባህል ግንዛቤ ዝግጅት[cite: 1]。</p>
-                <p class="lang-ar">تدريب لغوي أساسي مكثف وتوجيه ثقافي كامل للشرق الأوسط[cite: 1].</p>
+            <div class="card-step pop-in">
+                <div class="step-badge">Step 3</div>
+                <h4>
+                    <span class="lang-en">GAMCA & TVET Training</span>
+                    <span class="lang-am">የህክምና ምርመራ እና ስልጠና</span>
+                    <span class="lang-ar">الفحص الطبي والتدريب</span>
+                </h4>
+                <p class="lang-en">Candidates undergo official GAMCA medical fitness exams and complete 21-day mandatory TVET school training for their CoC.</p>
+                <p class="lang-am">እጩዎች ይፋዊ የጋምካ (GAMCA) የጤና ምርመራ ያደርጋሉ። ለብቃት ማረጋገጫ (CoC) የ 21 ቀናት አስገዳጅ ስልጠና በተረጋገጡ የቴክኒክና ሙያ ተቋማት ይወስዳሉ።</p>
+                <p class="lang-ar">يخضع المرشحون لفحوصات اللياقة الطبية المعتمدة (GAMCA). ويتمون التدريب الإلزامي لمدة 21 يومًا عبر معاهد TVET للحصول على شهادة الكفاءة (CoC).</p>
+            </div>
+            <div class="card-step pop-in">
+                <div class="step-badge">Step 4</div>
+                <h4>
+                    <span class="lang-en">Visa & Flight Logistics</span>
+                    <span class="lang-am">ቪዛ ስታምፕ እና በረራ</span>
+                    <span class="lang-ar">تأشير الفيزا وحجز الطيران</span>
+                </h4>
+                <p class="lang-en">Process visas via Tasheer / Enjaz / MoFA platforms per country (KSA, UAE, Qatar, Jordan). Flights booked via Ethiopian Airlines.</p>
+                <p class="lang-am">በየሀገሩ (ሳውዲ፣ ዱባይ፣ ኳታር፣ ጆርዳን) መሰረት በታሸር/ኤንጃዝ/ሞፋ ቪዛ ማስተናገድ። በረራዎች በኢትዮጵያ አየር መንገድ ብቻ ይያዛሉ።</p>
+                <p class="lang-ar">معالجة التأشيرات عبر منصات (تأشير / إنجاز / وزارة الخارجية) حسب الدولة (السعودية، الإمارات، قطر، الأردن). الحجز حصريًا عبر الخطوط الإثيوبية.</p>
             </div>
         </div>
     </section>
 
-    <!-- Salary Structure & Packages Section -->
+    <!-- NEW SECTION: Trust Features & MoLS Compliance Matrix -->
     <section class="container">
         <h2 class="section-title pop-in">
-            <span class="lang-en">Job Categories & Salary Ranges</span>
-            <span class="lang-am">የስራ መደቦች እና የደመወዝ መጠን</span>
-            <span class="lang-ar">فئات الوظائف ونطاقات الرواتب</span>
+            <span class="lang-en">Worker Readiness & Welfare Features</span>
+            <span class="lang-am">የሰራተኞች ዝግጁነት እና ደህንነት መገለጫዎች</span>
+            <span class="lang-ar">مزايا جاهزية العمالة ورعايتها</span>
         </h2>
         
         <div class="table-responsive pop-in">
             <table>
                 <thead>
                     <tr>
-                        <th>Destination</th>
-                        <th>Job Role</th>
-                        <th>Experience Level</th>
-                        <th>Salary Details</th>
+                        <th>Feature</th>
+                        <th>What We Provide</th>
+                        <th>Why It Matters</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>🇸🇦 Saudi Arabia[cite: 1]</td>
-                        <td>Housemaid / Domestic Helper[cite: 1]</td>
-                        <td>Fresh / First Time[cite: 1]</td>
-                        <td>1,000 SAR[cite: 1]</td>
+                        <td><strong>Language & Cultural Training</strong></td>
+                        <td>Basic Arabic, household vocabulary, and Middle Eastern cultural norms.</td>
+                        <td>Minimizes early-stage communication gaps.</td>
                     </tr>
                     <tr>
-                        <td>🇸🇦 Saudi Arabia[cite: 1]</td>
-                        <td>Housemaid / Domestic Helper[cite: 1]</td>
-                        <td>2+ Years Gulf Exp.[cite: 1]</td>
-                        <td>1,200 SAR[cite: 1]</td>
+                        <td><strong>Modern Appliances Training</strong></td>
+                        <td>Hands-on experience with washing machines, smart vacuums, microwaves, and ironers.</td>
+                        <td>Prevents accidental equipment damage.</td>
                     </tr>
                     <tr>
-                        <td>🇰🇼 Kuwait[cite: 1]</td>
-                        <td>Housemaid / Domestic Helper[cite: 1]</td>
-                        <td>Fresh / First Time[cite: 1]</td>
-                        <td>100 KWD[cite: 1]</td>
+                        <td><strong>CoC Certification</strong></td>
+                        <td>Compliance with the latest 2026 MoLS guidelines for technical qualification.</td>
+                        <td>Guarantees legal clearance for exit.</td>
                     </tr>
                     <tr>
-                        <td>🇦🇪 UAE[cite: 1]</td>
-                        <td>Housemaid / Domestic Helper[cite: 1]</td>
-                        <td>Fresh / First Time[cite: 1]</td>
-                        <td>1,000 AED[cite: 1]</td>
+                        <td><strong>Post-Placement Support</strong></td>
+                        <td>Dedicated case officers who mediate between worker and employer over WhatsApp/Phone.</td>
+                        <td>Reduces absconding and protects worker welfare.</td>
                     </tr>
                 </tbody>
             </table>
@@ -508,15 +710,39 @@
     <!-- Fixed Footer -->
     <footer>
         <h3 class="pop-in">BORENA FOREIGN EMPLOYMENT AGENT PLC[cite: 1]</h3>
+        
+        <!-- 1-Click High Conversion Footer WhatsApp Button -->
+        <div class="pop-in">
+            <a href="https://wa.me/251908104444" target="_blank" class="btn-whatsapp-footer">
+                <i class="fab fa-whatsapp"></i>
+                <span class="lang-en">Connect Instantly via WhatsApp</span>
+                <span class="lang-am">በዋትስአፕ በቀጥታ ይገናኙን</span>
+                <span class="lang-ar">تواصل معنا فورًا عبر الواتساب</span>
+            </a>
+        </div>
+
         <p class="pop-in">
             <span class="lang-en">Arada Sub City, Woreda 05, House No. 82, Kebele 845, Addis Ababa, Ethiopia[cite: 1]</span>
             <span class="lang-am">አራዳ ክፍለ ከተማ፣ ወረዳ 05፣ የቤት ቁጥር 82፣ ቀበሌ 845፣ አዲስ አበባ፣ ኢትዮጵያ[cite: 1]</span>
             <span class="lang-ar">منطقة أرادا الفرعية، وريدا 05، منزل رقم 82، كبيلي 845، أديس أبابا، إثيوبيا[cite: 1]</span>
         </p>
-        <p class="pop-in" style="margin-top: 25px; font-size: 1.1rem;">
-            <b>WhatsApp / Telegram:</b> <a href="tel:0908104444">0908 10 44 44</a>[cite: 1]<br><br>
-            <b>Email Address:</b> <a href="mailto:borenaa516@gmail.com">borenaa516@gmail.com</a>[cite: 1]
+        
+        <p class="pop-in" style="margin-top: 25px; font-size: 1.1rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <span>
+                <i class="fas fa-phone" style="color: var(--neon-blue-green);"></i> <b>Phone / Channels:</b> 
+                <a href="tel:0908104444" class="footer-contact-link">0908 10 44 44</a>[cite: 1]
+            </span>
+            <span>
+                <i class="fas fa-envelope" style="color: var(--neon-blue-green);"></i> <b>Email Address:</b> 
+                <a href="mailto:borenaa516@gmail.com" class="footer-contact-link">borenaa516@gmail.com</a>[cite: 1]
+            </span>
         </p>
+
+        <!-- Footer Visual Channel Icons Grid -->
+        <div class="pop-in" style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+            <a href="https://wa.me/251908104444" target="_blank" class="icon-btn" style="font-size: 1.8rem;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/0908104444" target="_blank" class="icon-btn" style="font-size: 1.8rem;"><i class="fab fa-telegram"></i></a>
+        </div>
     </footer>
 
     <!-- Javascript Animation Control and Switching Engine -->
