@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BORENA FOREIGN EMPLOYMENT AGENT PLC</title>
     <style>
-        /* Base Styles & Dark Theme */
+        /* Base Styles & Green/White Theme */
         :root {
-            --bg-dark: #0a0a12;
-            --neon-cyan: #00f3ff;
-            --neon-magenta: #ff00ea;
-            --text-light: #e0e0e0;
+            --bg-white: #ffffff;
+            --bg-light-green: #f0fdf4;
+            --main-green: #15803d;
+            --accent-green: #22c55e;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
         }
         
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: var(--bg-white);
+            color: var(--text-dark);
             overflow-x: hidden;
         }
 
@@ -33,52 +35,65 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 18, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 243, 255, 0.2);
+            box-shadow: 0 2px 15px rgba(21, 128, 61, 0.15);
             box-sizing: border-box;
+            backdrop-filter: blur(5px);
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #fff;
-            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+            color: var(--main-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .lang-selector select {
-            background: transparent;
-            color: var(--neon-magenta);
-            border: 2px solid var(--neon-magenta);
+            background: var(--bg-white);
+            color: var(--main-green);
+            border: 2px solid var(--main-green);
             padding: 5px 10px;
             border-radius: 5px;
             font-weight: bold;
             outline: none;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(255, 0, 234, 0.5);
+            transition: all 0.3s;
+        }
+
+        .lang-selector select:hover {
+            background: var(--main-green);
+            color: var(--bg-white);
         }
 
         /* Hero Section */
         .hero {
-            padding: 150px 20px 100px;
+            padding: 160px 20px 100px;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1a2e 0%, var(--bg-dark) 100%);
+            background: linear-gradient(135deg, var(--bg-light-green) 0%, var(--bg-white) 100%);
+            border-bottom: 2px solid var(--accent-green);
         }
 
         h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+            margin-bottom: 15px;
+            color: var(--main-green);
         }
 
         h2 {
-            color: var(--neon-magenta);
-            text-shadow: 0 0 10px var(--neon-magenta);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .dual-buttons {
@@ -91,91 +106,113 @@
 
         .btn {
             padding: 15px 30px;
-            border: none;
+            border: 2px solid var(--main-green);
             border-radius: 30px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            color: #000;
             transition: all 0.3s ease;
         }
 
-        .btn-cyan {
-            background: var(--neon-cyan);
-            box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+        .btn-primary {
+            background: var(--main-green);
+            color: var(--bg-white);
+            box-shadow: 0 4px 15px rgba(21, 128, 61, 0.3);
         }
 
-        .btn-magenta {
-            background: var(--neon-magenta);
-            color: #fff;
-            box-shadow: 0 0 15px var(--neon-magenta), 0 0 30px var(--neon-magenta);
+        .btn-outline {
+            background: transparent;
+            color: var(--main-green);
         }
 
         .btn:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(21, 128, 61, 0.4);
+        }
+
+        .btn-outline:hover {
+            background: var(--main-green);
+            color: var(--bg-white);
         }
 
         /* Layout & Containers */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
 
-        /* Neon Cards for Workflow & Benefits */
+        .section-title {
+            text-align: center;
+            color: var(--main-green);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        /* Cards for Workflow & Benefits */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 30px;
         }
 
         .card {
-            background: #11111a;
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.05), 0 0 15px rgba(0, 243, 255, 0.1);
-            transition: transform 0.3s;
+            background: var(--bg-white);
+            border: 1px solid #e5e7eb;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent-green);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
-            border-color: var(--neon-cyan);
-            box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.2), 0 0 30px rgba(0, 243, 255, 0.4);
             transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(21, 128, 61, 0.15);
+        }
+        
+        .card h3 {
+            color: var(--main-green);
+            margin-top: 0;
         }
 
         /* Salary Table */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
-            background: #11111a;
+            background: var(--bg-white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(255, 0, 234, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
         }
 
         th, td {
-            padding: 15px;
+            padding: 18px 15px;
             text-align: left;
-            border-bottom: 1px solid rgba(255, 0, 234, 0.2);
+            border-bottom: 1px solid #e5e7eb;
         }
 
         th {
-            background: rgba(255, 0, 234, 0.1);
-            color: var(--neon-magenta);
-            font-weight: bold;
+            background: var(--main-green);
+            color: var(--bg-white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        tr:hover {
+            background-color: var(--bg-light-green);
         }
 
         /* Pop-in Animation Classes */
         .pop-in {
             opacity: 0;
-            transform: scale(0.8) translateY(30px);
-            transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                        transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: scale(0.9) translateY(20px);
+            transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .pop-in.visible {
@@ -185,16 +222,35 @@
 
         /* Footer */
         footer {
-            background: #05050a;
-            padding: 40px 20px;
+            background: var(--main-green);
+            color: var(--bg-white);
+            padding: 50px 20px;
             text-align: center;
-            border-top: 2px solid var(--neon-cyan);
-            box-shadow: 0 -10px 30px rgba(0, 243, 255, 0.1);
+        }
+        
+        footer h3 {
+            color: var(--bg-white);
+            margin-bottom: 15px;
+        }
+        
+        footer p {
+            color: #d1fae5;
+        }
+
+        footer a {
+            color: #bbf7d0;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        footer a:hover {
+            color: var(--bg-white);
         }
     </style>
 </head>
 <body>
 
+    <!-- Sticky Header -->
     <header>
         <div class="logo">BORENA PLC</div>
         <div class="lang-selector">
@@ -206,6 +262,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <h1 class="pop-in">
             <span class="lang-en">Borena Foreign Employment Agent</span>
@@ -224,12 +281,12 @@
         </p>
 
         <div class="dual-buttons pop-in">
-            <a href="mailto:borenaa516@gmail.com" class="btn btn-cyan">
+            <a href="mailto:borenaa516@gmail.com" class="btn btn-primary">
                 <span class="lang-en">Request Manpower</span>
                 <span class="lang-am">የሰው ኃይል ይጠይቁ</span>
                 <span class="lang-ar">طلب عمالة</span>
             </a>
-            <a href="mailto:borenaa516@gmail.com" class="btn btn-magenta">
+            <a href="mailto:borenaa516@gmail.com" class="btn btn-outline">
                 <span class="lang-en">Register to Work</span>
                 <span class="lang-am">ለመስራት ይመዝገቡ</span>
                 <span class="lang-ar">سجل للعمل</span>
@@ -237,8 +294,9 @@
         </div>
     </section>
 
+    <!-- Recruitment Workflow -->
     <section class="container">
-        <h2 class="pop-in" style="text-align: center; color: var(--neon-cyan);">
+        <h2 class="section-title pop-in">
             <span class="lang-en">Our Recruitment Workflow</span>
             <span class="lang-am">የምልመላ ሂደታችን</span>
             <span class="lang-ar">سير عمل التوظيف لدينا</span>
@@ -246,19 +304,19 @@
         
         <div class="grid-3">
             <div class="card pop-in">
-                <h3 style="color: var(--neon-magenta);">1. Sourcing & Screening</h3>
+                <h3>1. Sourcing & Screening</h3>
                 <p class="lang-en">Rigorous background checks, initial interviews, and verifying candidates' clean records.</p>
                 <p class="lang-am">ጥብቅ የጀርባ ምርመራዎች እና የመጀመሪያ ቃለ-መጠይቆች።</p>
                 <p class="lang-ar">فحوصات خلفية صارمة ومقابلات أولية.</p>
             </div>
             <div class="card pop-in">
-                <h3 style="color: var(--neon-magenta);">2. Medical Clearance</h3>
+                <h3>2. Medical Clearance</h3>
                 <p class="lang-en">Ensuring full compliance with strict GCC visa health standards and GAMCA approvals.</p>
                 <p class="lang-am">የጂሲሲ የቪዛ የጤና መስፈርቶችን ማሟላት።</p>
                 <p class="lang-ar">ضمان الامتثال الكامل لمعايير الصحة لتاشيرات دول مجلس التعاون الخليجي.</p>
             </div>
             <div class="card pop-in">
-                <h3 style="color: var(--neon-magenta);">3. Pre-Departure Training</h3>
+                <h3>3. Pre-Departure Training</h3>
                 <p class="lang-en">Language training, cultural orientation, and skill development for destination standards.</p>
                 <p class="lang-am">የቋንቋ ስልጠና እና የባህል ግንዛቤ።</p>
                 <p class="lang-ar">التدريب اللغوي والتوجيه الثقافي.</p>
@@ -266,8 +324,9 @@
         </div>
     </section>
 
-    <section class="container">
-        <h2 class="pop-in" style="text-align: center; color: var(--neon-magenta);">
+    <!-- Salary Matrix -->
+    <section class="container" style="background-color: var(--bg-light-green); border-radius: 15px; margin-bottom: 40px;">
+        <h2 class="section-title pop-in">
             <span class="lang-en">Salary Matrix & Job Categories</span>
             <span class="lang-am">የደመወዝ መዋቅር እና የስራ ክፍሎች</span>
             <span class="lang-ar">مصفوفة الرواتب وفئات الوظائف</span>
@@ -313,30 +372,32 @@
         </div>
     </section>
 
+    <!-- Footer / Contact -->
     <footer>
-        <h3 class="pop-in" style="color: var(--neon-cyan);">BORENA FOREIGN EMPLOYMENT AGENT PLC</h3>
+        <h3 class="pop-in">BORENA FOREIGN EMPLOYMENT AGENT PLC</h3>
         <p class="pop-in">
             <span class="lang-en">Arada Sub City, Woreda 05, House No. 845, Addis Ababa, Ethiopia</span>
             <span class="lang-am">አራዳ ክፍለ ከተማ፣ ወረዳ 05፣ የቤት ቁጥር 845፣ አዲስ አበባ</span>
             <span class="lang-ar">منطقة أرادا الفرعية، وريدا 05، منزل رقم 845، أديس أبابا</span>
         </p>
-        <p class="pop-in" style="margin-top: 20px; font-size: 1.2rem;">
-            📞 <strong>WhatsApp / Telegram:</strong> <a href="tel:0908104444" style="color: var(--neon-magenta); text-decoration: none;">0908 10 44 44</a><br>
-            ✉️ <strong>Email:</strong> <a href="mailto:borenaa516@gmail.com" style="color: var(--neon-magenta); text-decoration: none;">borenaa516@gmail.com</a>
+        <p class="pop-in" style="margin-top: 20px; font-size: 1.1rem;">
+            📞 <strong>WhatsApp / Telegram:</strong> <a href="tel:0908104444">0908 10 44 44</a><br><br>
+            ✉️ <strong>Email:</strong> <a href="mailto:borenaa516@gmail.com">borenaa516@gmail.com</a>
         </p>
     </footer>
 
+    <!-- Scripts for Functionality and Animation -->
     <script>
         // Language Toggler Logic
         function changeLanguage() {
             const lang = document.getElementById('languageToggle').value;
-            document.body.className = ''; // Reset classes
+            document.body.className = ''; 
             if (lang !== 'en') {
                 document.body.classList.add(lang);
             }
         }
 
-        // Intersection Observer for Neon Pop-In Animations
+        // Intersection Observer for Pop-In Animations
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
                 root: null,
@@ -344,14 +405,11 @@
                 threshold: 0.15
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Optional: stop observing once animated in
-                        // observer.unobserve(entry.target); 
                     } else {
-                        // Remove this else block if you only want them to pop in once and stay
                         entry.target.classList.remove('visible'); 
                     }
                 });
@@ -362,4 +420,4 @@
         });
     </script>
 </body>
-</html
+</html>
