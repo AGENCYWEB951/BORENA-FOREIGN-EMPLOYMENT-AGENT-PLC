@@ -1,780 +1,782 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORENA FOREIGN EMPLOYMENT AGENT PLC</title>
-    <!-- Font Awesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* Base Colors & Dark Neon Blue-Green Theme */
-        :root {
-            --bg-dark: #050c0e;
-            --card-dark: #0b1619;
-            --neon-teal: #00ffd5;
-            --neon-blue-green: #00bfff;
-            --text-light: #e6f7f4;
-            --text-muted: #8fa8a4;
-            --neon-glow-teal: 0 0 10px rgba(0, 255, 213, 0.6), 0 0 20px rgba(0, 255, 213, 0.4);
-            --neon-glow-blue: 0 0 10px rgba(0, 191, 255, 0.6), 0 0 20px rgba(0, 191, 255, 0.4);
-        }
-        
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BORENA FOREIGN EMPLOYMENT AGENT PLC</title>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Base Colors & Dark Neon Blue-Green Theme */
+:root {
+--bg-dark: #050c0e;
+--card-dark: #0b1619;
+--neon-teal: #00ffd5;
+--neon-blue-green: #00bfff;
+--text-light: #e6f7f4;
+--text-muted: #8fa8a4;
+--neon-glow-teal: 0 0 10px rgba(0, 255, 213, 0.6), 0 0 20px rgba(0, 255, 213, 0.4);
+--neon-glow-blue: 0 0 10px rgba(0, 191, 255, 0.6), 0 0 20px rgba(0, 191, 255, 0.4);
+}
 
-        /* Language Toggle Framework */
-        .lang-am, .lang-ar { display: none; }
-        body.am .lang-en, body.am .lang-ar { display: none; }
-        body.am .lang-am { display: inline-block; }
-        body.ar .lang-en, body.ar .lang-am { display: none; }
-        body.ar .lang-ar { display: inline-block; direction: rtl; }
-        
-        /* Two-Tier Enhanced Sticky Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(5, 12, 14, 0.98);
-            z-index: 1000;
-            box-shadow: 0 2px 25px rgba(0, 255, 213, 0.15);
-            box-sizing: border-box;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 255, 213, 0.2);
-        }
+body {
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--bg-dark);
+color: var(--text-light);
+overflow-x: hidden;
+}
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 8px 20px;
-        }
+/* Language Toggle Framework */
+.lang-am, .lang-ar { display: none; }
+body.am .lang-en, body.am .lang-ar { display: none; }
+body.am .lang-am { display: inline-block; }
+body.ar .lang-en, body.ar .lang-am { display: none; }
+body.ar .lang-ar { display: inline-block; direction: rtl; }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-bottom: 1px solid rgba(0, 255, 213, 0.1);
-            padding-bottom: 6px;
-            margin-bottom: 6px;
-        }
+/* Two-Tier Enhanced Sticky Header */
+header {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(5, 12, 14, 0.98);
+z-index: 1000;
+box-shadow: 0 2px 25px rgba(0, 255, 213, 0.15);
+box-sizing: border-box;
+backdrop-filter: blur(10px);
+border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+}
 
-        .header-contact-info {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.header-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 8px 20px;
+}
 
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            color: var(--text-muted);
-            transition: color 0.3s;
-        }
+.header-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.85rem;
+color: var(--text-muted);
+border-bottom: 1px solid rgba(0, 255, 213, 0.1);
+padding-bottom: 6px;
+margin-bottom: 6px;
+}
 
-        .info-item:hover {
-            color: var(--neon-teal);
-        }
+.header-contact-info {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
 
-        .info-item i {
-            color: var(--neon-blue-green);
-            text-shadow: var(--neon-glow-blue);
-        }
+.info-item {
+display: flex;
+align-items: center;
+gap: 6px;
+text-decoration: none;
+color: var(--text-muted);
+transition: color 0.3s;
+}
 
-        .header-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.info-item:hover {
+color: var(--neon-teal);
+}
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #ffffff;
-            letter-spacing: 1px;
-            text-shadow: var(--neon-glow-teal);
-            text-decoration: none;
-        }
+.info-item i {
+color: var(--neon-blue-green);
+text-shadow: var(--neon-glow-blue);
+}
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+.header-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-        /* Neon Icon Links */
-        .social-icons-group {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.logo {
+font-size: 1.4rem;
+font-weight: bold;
+color: #ffffff;
+letter-spacing: 1px;
+text-shadow: var(--neon-glow-teal);
+text-decoration: none;
+}
 
-        .icon-btn {
-            color: var(--neon-teal);
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-            text-shadow: var(--neon-glow-teal);
-            text-decoration: none;
-        }
+.header-actions {
+display: flex;
+align-items: center;
+gap: 15px;
+}
 
-        .icon-btn:hover {
-            color: #ffffff;
-            transform: scale(1.15);
-            text-shadow: 0 0 15px var(--neon-teal);
-        }
+/* Neon Icon Links */
+.social-icons-group {
+display: flex;
+align-items: center;
+gap: 12px;
+}
 
-        /* Instant WhatsApp Buttons */
-        .btn-whatsapp-header {
-            background: rgba(0, 255, 213, 0.1);
-            border: 1px solid var(--neon-teal);
-            color: var(--neon-teal);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 0 10px rgba(0, 255, 213, 0.1);
-            transition: all 0.3s ease;
-        }
+.icon-btn {
+color: var(--neon-teal);
+font-size: 1.25rem;
+transition: all 0.3s ease;
+text-shadow: var(--neon-glow-teal);
+text-decoration: none;
+}
 
-        .btn-whatsapp-header:hover {
-            background: var(--neon-teal);
-            color: var(--bg-dark);
-            box-shadow: var(--neon-glow-teal);
-            transform: translateY(-1px);
-        }
+.icon-btn:hover {
+color: #ffffff;
+transform: scale(1.15);
+text-shadow: 0 0 15px var(--neon-teal);
+}
 
-        .btn-whatsapp-footer {
-            background: transparent;
-            border: 2px solid var(--neon-teal);
-            color: var(--neon-teal);
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: inset 0 0 15px rgba(0, 255, 213, 0.05), var(--neon-glow-teal);
-            margin: 25px 0;
-            transition: all 0.3s ease;
-        }
+/* Instant WhatsApp Buttons */
+.btn-whatsapp-header {
+background: rgba(0, 255, 213, 0.1);
+border: 1px solid var(--neon-teal);
+color: var(--neon-teal);
+padding: 6px 14px;
+border-radius: 20px;
+font-weight: bold;
+font-size: 0.85rem;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 6px;
+box-shadow: 0 0 10px rgba(0, 255, 213, 0.1);
+transition: all 0.3s ease;
+}
 
-        .btn-whatsapp-footer:hover {
-            background: var(--neon-teal);
-            color: var(--bg-dark);
-            box-shadow: 0 0 25px var(--neon-teal), 0 0 50px var(--neon-teal);
-            transform: scale(1.03);
-        }
+.btn-whatsapp-header:hover {
+background: var(--neon-teal);
+color: var(--bg-dark);
+box-shadow: var(--neon-glow-teal);
+transform: translateY(-1px);
+}
 
-        .lang-selector select {
-            background: var(--bg-dark);
-            color: var(--neon-blue-green);
-            border: 1px solid var(--neon-blue-green);
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            outline: none;
-            cursor: pointer;
-            box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
-            transition: all 0.3s;
-        }
+.btn-whatsapp-footer {
+background: transparent;
+border: 2px solid var(--neon-teal);
+color: var(--neon-teal);
+padding: 15px 40px;
+border-radius: 30px;
+font-weight: bold;
+font-size: 1.1rem;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+box-shadow: inset 0 0 15px rgba(0, 255, 213, 0.05), var(--neon-glow-teal);
+margin: 25px 0;
+transition: all 0.3s ease;
+}
 
-        .lang-selector select:hover {
-            background: var(--neon-blue-green);
-            color: var(--bg-dark);
-            box-shadow: var(--neon-glow-blue);
-        }
+.btn-whatsapp-footer:hover {
+background: var(--neon-teal);
+color: var(--bg-dark);
+box-shadow: 0 0 25px var(--neon-teal), 0 0 50px var(--neon-teal);
+transform: scale(1.03);
+}
 
-        /* Hero Section */
-        .hero {
-            padding: 210px 20px 110px;
-            text-align: center;
-            background: radial-gradient(circle at center, #0d2327 0%, var(--bg-dark) 100%);
-            border-bottom: 1px solid rgba(0, 191, 255, 0.2);
-        }
+.lang-selector select {
+background: var(--bg-dark);
+color: var(--neon-blue-green);
+border: 1px solid var(--neon-blue-green);
+padding: 5px 10px;
+border-radius: 6px;
+font-weight: bold;
+outline: none;
+cursor: pointer;
+box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
+transition: all 0.3s;
+}
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: #ffffff;
-            text-shadow: 0 0 15px var(--neon-teal), 0 0 30px var(--neon-teal);
-        }
+.lang-selector select:hover {
+background: var(--neon-blue-green);
+color: var(--bg-dark);
+box-shadow: var(--neon-glow-blue);
+}
 
-        h2 {
-            color: var(--neon-blue-green);
-            font-weight: 600;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-shadow: var(--neon-glow-blue);
-        }
+/* Hero Section */
+.hero {
+padding: 210px 20px 110px;
+text-align: center;
+background: radial-gradient(circle at center, #0d2327 0%, var(--bg-dark) 100%);
+border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+}
 
-        /* Dual-Action Buttons */
-        .dual-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
+h1 {
+font-size: 3rem;
+margin-bottom: 15px;
+color: #ffffff;
+text-shadow: 0 0 15px var(--neon-teal), 0 0 30px var(--neon-teal);
+}
 
-        .btn {
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
+h2 {
+color: var(--neon-blue-green);
+font-weight: 600;
+font-size: 1.5rem;
+margin-bottom: 30px;
+text-shadow: var(--neon-glow-blue);
+}
 
-        .btn-primary {
-            background: var(--neon-teal);
-            color: var(--bg-dark);
-            border: 2px solid var(--neon-teal);
-            box-shadow: var(--neon-glow-teal);
-        }
+/* Dual-Action Buttons */
+.dual-buttons {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin-top: 25px;
+}
 
-        .btn-outline {
-            background: transparent;
-            color: var(--neon-blue-green);
-            border: 2px solid var(--neon-blue-green);
-            box-shadow: inset 0 0 10px rgba(0, 191, 255, 0.1), 0 0 10px rgba(0, 191, 255, 0.1);
-        }
+.btn {
+padding: 15px 35px;
+border-radius: 30px;
+font-size: 1.05rem;
+font-weight: bold;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.25s ease;
+}
 
-        .btn:hover {
-            transform: translateY(-3px) scale(1.02);
-        }
+.btn-primary {
+background: var(--neon-teal);
+color: var(--bg-dark);
+border: 2px solid var(--neon-teal);
+box-shadow: var(--neon-glow-teal);
+}
 
-        .btn-primary:hover {
-            box-shadow: 0 0 25px var(--neon-teal), 0 0 45px var(--neon-teal);
-            background: #ffffff;
-        }
+.btn-outline {
+background: transparent;
+color: var(--neon-blue-green);
+border: 2px solid var(--neon-blue-green);
+box-shadow: inset 0 0 10px rgba(0, 191, 255, 0.1), 0 0 10px rgba(0, 191, 255, 0.1);
+}
 
-        .btn-outline:hover {
-            background: var(--neon-blue-green);
-            color: var(--bg-dark);
-            box-shadow: var(--neon-glow-blue);
-        }
+.btn:hover {
+transform: translateY(-3px) scale(1.02);
+}
 
-        /* Containers & Layout */
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+.btn-primary:hover {
+box-shadow: 0 0 25px var(--neon-teal), 0 0 45px var(--neon-teal);
+background: #ffffff;
+}
 
-        .section-title {
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 45px;
-            font-size: 2.2rem;
-            text-shadow: var(--neon-glow-teal);
-        }
+.btn-outline:hover {
+background: var(--neon-blue-green);
+color: var(--bg-dark);
+box-shadow: var(--neon-glow-blue);
+}
 
-        /* Trust Banner */
-        .trust-banner {
-            background: rgba(11, 22, 25, 0.8);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 12px;
-            margin: -20px auto 50px;
-            max-width: 900px;
-            border: 2px solid var(--neon-teal);
-            box-shadow: inset 0 0 20px rgba(0, 255, 213, 0.1), var(--neon-glow-teal);
-        }
+/* Containers & Layout */
+.container {
+max-width: 1140px;
+margin: 0 auto;
+padding: 60px 20px;
+}
 
-        .trust-banner h3 {
-            margin: 0 0 12px 0;
-            font-size: 1.4rem;
-            color: var(--neon-teal);
-            text-shadow: var(--neon-glow-teal);
-        }
+.section-title {
+text-align: center;
+color: #ffffff;
+margin-bottom: 45px;
+font-size: 2.2rem;
+text-shadow: var(--neon-glow-teal);
+}
 
-        .trust-banner p {
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: var(--text-light);
-        }
+/* Trust Banner */
+.trust-banner {
+background: rgba(11, 22, 25, 0.8);
+color: white;
+padding: 30px;
+text-align: center;
+border-radius: 12px;
+margin: -20px auto 50px;
+max-width: 900px;
+border: 2px solid var(--neon-teal);
+box-shadow: inset 0 0 20px rgba(0, 255, 213, 0.1), var(--neon-glow-teal);
+}
 
-        /* Country Destination Flags Lanes */
-        .flags-lane {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
+.trust-banner h3 {
+margin: 0 0 12px 0;
+font-size: 1.4rem;
+color: var(--neon-teal);
+text-shadow: var(--neon-glow-teal);
+}
 
-        .flag-card {
-            background: var(--card-dark);
-            border: 2px solid rgba(0, 191, 255, 0.2);
-            border-radius: 14px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
+.trust-banner p {
+margin: 0;
+font-size: 1.05rem;
+line-height: 1.6;
+color: var(--text-light);
+}
 
-        .flag-card:hover {
-            border-color: var(--neon-blue-green);
-            transform: translateY(-5px);
-            box-shadow: var(--neon-glow-blue), inset 0 0 15px rgba(0, 191, 255, 0.1);
-        }
+/* Country Destination Flags Lanes */
+.flags-lane {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+margin-bottom: 50px;
+}
 
-        .flag-graphic {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            display: inline-block;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
-        }
+.flag-card {
+background: var(--card-dark);
+border: 2px solid rgba(0, 191, 255, 0.2);
+border-radius: 14px;
+padding: 25px;
+text-align: center;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+transition: all 0.3s ease;
+}
 
-        .flag-card h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.4rem;
-            color: #ffffff;
-            text-shadow: var(--neon-glow-blue);
-        }
+.flag-card:hover {
+border-color: var(--neon-blue-green);
+transform: translateY(-5px);
+box-shadow: var(--neon-glow-blue), inset 0 0 15px rgba(0, 191, 255, 0.1);
+}
 
-        .flag-card p {
-            margin: 0;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
+.flag-graphic {
+font-size: 3.5rem;
+margin-bottom: 15px;
+display: inline-block;
+filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+}
 
-        /* Step Process Grid Framework for Workflow & B2B Partner Portal */
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
+.flag-card h4 {
+margin: 0 0 10px 0;
+font-size: 1.4rem;
+color: #ffffff;
+text-shadow: var(--neon-glow-blue);
+}
 
-        .card-step {
-            background: var(--card-dark);
-            border: 1px solid rgba(0, 191, 255, 0.2);
-            padding: 25px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            position: relative;
-            transition: all 0.3s ease;
-        }
+.flag-card p {
+margin: 0;
+color: var(--text-muted);
+font-size: 0.95rem;
+line-height: 1.5;
+}
 
-        .card-step:hover {
-            border-color: var(--neon-blue-green);
-            transform: translateY(-4px);
-            box-shadow: var(--neon-glow-blue), inset 0 0 12px rgba(0, 191, 255, 0.1);
-        }
+/* Step Process Grid Framework for Workflow & B2B Partner Portal */
+.grid-4 {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 20px;
+}
 
-        .step-badge {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--neon-blue-green);
-            color: var(--bg-dark);
-            font-weight: bold;
-            font-size: 0.8rem;
-            padding: 3px 12px;
-            border-radius: 10px;
-            box-shadow: var(--neon-glow-blue);
-            text-transform: uppercase;
-        }
+.card-step {
+background: var(--card-dark);
+border: 1px solid rgba(0, 191, 255, 0.2);
+padding: 25px 20px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+position: relative;
+transition: all 0.3s ease;
+}
 
-        .card-step h4 {
-            color: #ffffff;
-            margin: 15px 0 10px 0;
-            font-size: 1.15rem;
-            line-height: 1.4;
-        }
+.card-step:hover {
+border-color: var(--neon-blue-green);
+transform: translateY(-4px);
+box-shadow: var(--neon-glow-blue), inset 0 0 12px rgba(0, 191, 255, 0.1);
+}
 
-        .card-step p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 0;
-        }
+.step-badge {
+position: absolute;
+top: -12px;
+left: 20px;
+background: var(--neon-blue-green);
+color: var(--bg-dark);
+font-weight: bold;
+font-size: 0.8rem;
+padding: 3px 12px;
+border-radius: 10px;
+box-shadow: var(--neon-glow-blue);
+text-transform: uppercase;
+}
 
-        /* Tables & Matrix Styling */
-        .table-responsive {
-            overflow-x: auto;
-            box-shadow: 0 0 25px rgba(0, 255, 213, 0.05);
-            border-radius: 10px;
-            border: 2px solid rgba(0, 255, 213, 0.2);
-            margin-bottom: 40px;
-        }
+.card-step h4 {
+color: #ffffff;
+margin: 15px 0 10px 0;
+font-size: 1.15rem;
+line-height: 1.4;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--card-dark);
-        }
+.card-step p {
+color: var(--text-muted);
+font-size: 0.9rem;
+line-height: 1.5;
+margin: 0;
+}
 
-        th, td {
-            padding: 18px 20px;
-            text-align: left;
-            border-bottom: 1px solid rgba(0, 255, 213, 0.1);
-        }
+/* Tables & Matrix Styling */
+.table-responsive {
+overflow-x: auto;
+box-shadow: 0 0 25px rgba(0, 255, 213, 0.05);
+border-radius: 10px;
+border: 2px solid rgba(0, 255, 213, 0.2);
+margin-bottom: 40px;
+}
 
-        th {
-            background: rgba(0, 255, 213, 0.1);
-            color: var(--neon-teal);
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            text-shadow: var(--neon-glow-teal);
-            border-bottom: 2px solid var(--neon-teal);
-        }
+table {
+width: 100%;
+border-collapse: collapse;
+background: var(--card-dark);
+}
 
-        td strong {
-            color: var(--neon-blue-green);
-            text-shadow: rgba(0, 191, 255, 0.2);
-        }
+th, td {
+padding: 18px 20px;
+text-align: left;
+border-bottom: 1px solid rgba(0, 255, 213, 0.1);
+}
 
-        tr:hover {
-            background-color: rgba(0, 255, 213, 0.05);
-        }
+th {
+background: rgba(0, 255, 213, 0.1);
+color: var(--neon-teal);
+font-weight: 600;
+font-size: 0.95rem;
+text-transform: uppercase;
+text-shadow: var(--neon-glow-teal);
+border-bottom: 2px solid var(--neon-teal);
+}
 
-        /* Pop-In Animations */
-        .pop-in {
-            opacity: 0;
-            transform: scale(0.92) translateY(25px);
-            transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
+td strong {
+color: var(--neon-blue-green);
+text-shadow: rgba(0, 191, 255, 0.2);
+}
 
-        .pop-in.visible {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
+tr:hover {
+background-color: rgba(0, 255, 213, 0.05);
+}
 
-        /* Footer */
-        footer {
-            background: #030708;
-            color: var(--text-light);
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 2px solid var(--neon-teal);
-            box-shadow: 0 -10px 30px rgba(0, 255, 213, 0.1);
-        }
+/* Pop-In Animations */
+.pop-in {
+opacity: 0;
+transform: scale(0.92) translateY(25px);
+transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-        footer h3 {
-            text-shadow: var(--neon-glow-teal);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
+.pop-in.visible {
+opacity: 1;
+transform: scale(1) translateY(0);
+}
 
-        footer p { color: var(--text-muted); }
-        footer a.footer-contact-link { color: var(--neon-blue-green); text-decoration: none; font-weight: bold; text-shadow: var(--neon-glow-blue); }
-        footer a.footer-contact-link:hover { text-decoration: underline; color: #ffffff; }
-    </style>
+/* Footer */
+footer {
+background: #030708;
+color: var(--text-light);
+padding: 60px 20px;
+text-align: center;
+border-top: 2px solid var(--neon-teal);
+box-shadow: 0 -10px 30px rgba(0, 255, 213, 0.1);
+}
+
+footer h3 {
+text-shadow: var(--neon-glow-teal);
+font-size: 1.5rem;
+margin-bottom: 20px;
+}
+
+footer p { color: var(--text-muted); }
+footer a.footer-contact-link { color: var(--neon-blue-green); text-decoration: none; font-weight: bold; text-shadow: var(--neon-glow-blue); }
+footer a.footer-contact-link:hover { text-decoration: underline; color: #ffffff; }
+</style>
 </head>
 <body>
 
-    <!-- Enhanced Sticky Header Area -->
-    <header>
-        <div class="header-container">
-            <!-- Top Metadata Information Bar -->
-            <div class="header-top">
-                <div class="header-contact-info">
-                    <a href="tel:0908104444" class="info-item">[cite: 1]
-                        <i class="fas fa-phone"></i> <span>0908 10 44 44</span>[cite: 1]
-                    </a>
-                    <a href="mailto:borenaa516@gmail.com" class="info-item">[cite: 1]
-                        <i class="fas fa-envelope"></i> <span>borenaa516@gmail.com</span>[cite: 1]
-                    </a>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <span class="lang-en">Mon - Sat: 8:00 AM - 6:00 PM</span>
-                        <span class="lang-am">ሰኞ - ቅዳሜ፡ ከጠዋቱ 2፡00 - ከሰዓት 12፡00</span>
-                        <span class="lang-ar">الإثنين - السبت: 8:00 ص - 6:00 م</span>
-                    </div>
-                </div>
-                <!-- Mini Social Channel Action Row -->
-                <div class="social-icons-group">
-                    <a href="https://wa.me/251908104444" target="_blank" class="icon-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://t.me/0908104444" target="_blank" class="icon-btn" title="Telegram Channel"><i class="fab fa-telegram"></i></a>
-                </div>
-            </div>
-            
-            <!-- Bottom Navigation & Conversion Bar -->
-            <div class="header-bottom">
-                <a href="#" class="logo">BORENA AGENCY</a>
-                <div class="header-actions">
-                    <!-- 1-Click Instant Header WhatsApp Hook -->
-                    <a href="https://wa.me/251908104444" target="_blank" class="btn-whatsapp-header">
-                        <i class="fab fa-whatsapp"></i>
-                        <span class="lang-en">WhatsApp Chat</span>
-                        <span class="lang-am">ዋትስአፕ ማውሪያ</span>
-                        <span class="lang-ar">دردشة واتساب</span>
-                    </a>
-                    <div class="lang-selector">
-                        <select id="languageToggle" onchange="changeLanguage()">
-                            <option value="en">English</option>
-                            <option value="am">አማርኛ (Amharic)</option>
-                            <option value="ar">العربية (Arabic)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<!-- Enhanced Sticky Header Area -->
+<header>
+<div class="header-container">
+<!-- Top Metadata Information Bar -->
+<div class="header-top">
+<div class="header-contact-info">
+<a href="tel:0908104444" class="info-item">[cite: 1]
+<i class="fas fa-phone"></i> <span>0908 10 44 44</span>[cite: 1]
+</a>
+<a href="mailto:borenaa516@gmail.com" class="info-item">[cite: 1]
+<i class="fas fa-envelope"></i> <span>borenaa516@gmail.com</span>[cite: 1]
+</a>
+<div class="info-item">
+<i class="fas fa-clock"></i>
+<span class="lang-en">Mon - Sat: 8:00 AM - 6:00 PM</span>
+<span class="lang-am">ሰኞ - ቅዳሜ፡ ከጠዋቱ 2፡00 - ከሰዓት 12፡00</span>
+<span class="lang-ar">الإثنين - السبت: 8:00 ص - 6:00 م</span>
+</div>
+</div>
+<!-- Mini Social Channel Action Row -->
+<div class="social-icons-group">
+<a href="https://wa.me/251908104444" target="_blank" class="icon-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://t.me/0908104444" target="_blank" class="icon-btn" title="Telegram Channel"><i class="fab fa-telegram"></i></a>
+<a href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" class="icon-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
 
-    <!-- Main Hero Section -->
-    <section class="hero">
-        <h1 class="pop-in">
-            <span class="lang-en">Borena Foreign Employment Agent</span>
-            <span class="lang-am">ቦረና የውጭ ሀገር ስራ ስምሪት ኤጀንሲ</span>
-            <span class="lang-ar">وكالة بورينا للتوظيف الخارجي</span>
-        </h1>
-        <h2 class="pop-in">
-            <span class="lang-en">Connecting Professional Ethiopian Talent Globally</span>
-            <span class="lang-am">ፕሮፌሽናል የሆኑ የሀገር ውስጥ ባለሙያዎችን ከአለም ጋር ማገናኘት</span>
-            <span class="lang-ar">ربط الكفاءات الإثيوبية المهنية عالميًا</span>
-        </h2>
+<!-- Bottom Navigation & Conversion Bar -->
+<div class="header-bottom">
+<a href="#" class="logo">BORENA AGENCY</a>
+<div class="header-actions">
+<!-- 1-Click Instant Header WhatsApp Hook -->
+<a href="https://wa.me/251908104444" target="_blank" class="btn-whatsapp-header">
+<i class="fab fa-whatsapp"></i>
+<span class="lang-en">WhatsApp Chat</span>
+<span class="lang-am">ዋትስአፕ ማውሪያ</span>
+<span class="lang-ar">دردشة واتساب</span>
+</a>
+<div class="lang-selector">
+<select id="languageToggle" onchange="changeLanguage()">
+<option value="en">English</option>
+<option value="am">አማርኛ (Amharic)</option>
+<option value="ar">العربية (Arabic)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</header>
 
-        <!-- Dual Action Functional Buttons -->
-        <div class="dual-buttons pop-in">
-            <a href="mailto:borenaa516@gmail.com" class="btn btn-primary">[cite: 1]
-                <span class="lang-en">Request Manpower / Partner With Us</span>
-                <span class="lang-am">የሰው ኃይል ይጠይቁ / ከእኛ ጋር አጋር ይሁኑ</span>
-                <span class="lang-ar">طلب عمالة / الشراكة معنا</span>
-            </a>
-            <a href="mailto:borenaa516@gmail.com" class="btn btn-outline">[cite: 1]
-                <span class="lang-en">Register to Work / ይመዝገቡ</span>
-                <span class="lang-am">ለመስራት ይመዝገቡ / ምዝገባ</span>
-                <span class="lang-ar">سجل للعمل / التسجيل</span>
-            </a>
-        </div>
-    </section>
+<!-- Main Hero Section -->
+<section class="hero">
+<h1 class="pop-in">
+<span class="lang-en">Borena Foreign Employment Agent</span>
+<span class="lang-am">ቦረና የውጭ ሀገር ስራ ስምሪት ኤጀንሲ</span>
+<span class="lang-ar">وكالة بورينا للتوظيف الخارجي</span>
+</h1>
+<h2 class="pop-in">
+<span class="lang-en">Connecting Professional Ethiopian Talent Globally</span>
+<span class="lang-am">ፕሮፌሽናል የሆኑ የሀገር ውስጥ ባለሙያዎችን ከአለም ጋር ማገናኘት</span>
+<span class="lang-ar">ربط الكفاءات الإثيوبية المهنية عالميًا</span>
+</h2>
 
-    <!-- Trust Credentials & Lanes Display -->
-    <section class="container">
-        
-        <!-- Compliance & Authority Banner -->
-        <div class="trust-banner pop-in">
-            <h3>
-                <span class="lang-en">✓ Legitimate, Licensed Legal Entity</span>
-                <span class="lang-am">✓ ህጋዊ እና የተረጋገጠ የቅጥር ኤጀንሲ</span>
-                <span class="lang-ar">✓ كيان قانوني معتمد ومرخص رسميًا</span>
-            </h3>
-            <p>
-                <span class="lang-en">Fully compliant under Ethiopia's Overseas Employment Proclamations No. 923/2016 & 1246/2021[cite: 1]. Authorized by the Ministry of Labor[cite: 1].</span>
-                <span class="lang-am">በኢትዮጵያ የውጪ ሀገር ሥራ ሥምሪት አዋጅ ቁጥር 923/2008 እና 1246/2013 መሰረት የተመዘገበ[cite: 1]።</span>
-                <span class="lang-ar">متوافق تمامًا مع قوانين التوظيف الخارجي الإثيوبية رقم 923/2016 و 1246/2021[cite: 1].</span>
-            </p>
-        </div>
+<!-- Dual Action Functional Buttons -->
+<div class="dual-buttons pop-in">
+<a href="mailto:borenaa516@gmail.com" class="btn btn-primary">[cite: 1]
+<span class="lang-en">Request Manpower / Partner With Us</span>
+<span class="lang-am">የሰው ኃይል ይጠይቁ / ከእኛ ጋር አጋር ይሁኑ</span>
+<span class="lang-ar">طلب عمالة / الشراكة معنا</span>
+</a>
+<a href="mailto:borenaa516@gmail.com" class="btn btn-outline">[cite: 1]
+<span class="lang-en">Register to Work / ይመዝገቡ</span>
+<span class="lang-am">ለመስራት ይመዝገቡ / ምዝገባ</span>
+<span class="lang-ar">سجل للعمل / التسجيل</span>
+</a>
+</div>
+</section>
 
-        <h3 class="section-title pop-in">
-            <span class="lang-en">Our Primary Destination Lanes</span>
-            <span class="lang-am">ዋና ዋና የመዳረሻ ገበያዎቻችን</span>
-            <span class="lang-ar">مسارات وجهاتنا الرئيسية</span>
-        </h3>
+<!-- Trust Credentials & Lanes Display -->
+<section class="container">
 
-        <!-- Country Destinations & Flag Displays -->
-        <div class="flags-lane pop-in">
-            <div class="flag-card">
-                <span class="flag-graphic">🇸🇦</span>
-                <h4>Saudi Arabia[cite: 1]</h4>
-                <p class="lang-en">Full electronic e-contract processing integration via the Musaned government platform[cite: 1].</p>
-                <p class="lang-am">በሙሳነድ የኤሌክትሮኒክስ መድረክ በኩል የተሟላ የቪዛ እና የውል አሠራር[cite: 1]።</p>
-                <p class="lang-ar">تكامل كامل لمعالجة العقود الإلكترونية عبر منصة مساند الحكومية[cite: 1].</p>
-            </div>
-            <div class="flag-card">
-                <span class="flag-graphic">🇦🇪</span>
-                <h4>United Arab Emirates[cite: 1]</h4>
-                <p class="lang-en">Direct deployment lanes serving premium domestic help markets and commercial contracts[cite: 1].</p>
-                <p class="lang-am">ለቤት ሰራተኞች እና ለተለያዩ የስራ ክፍሎች ቀጥተኛ የስራ ስምሪት መላኪያ መስመር[cite: 1]።</p>
-                <p class="lang-ar">مسارات توظيف مباشرة تخدم أسواق العمل المنزلي والتجاري المميز[cite: 1].</p>
-            </div>
-            <div class="flag-card">
-                <span class="flag-graphic">🇰🇼</span>
-                <h4>Kuwait[cite: 1]</h4>
-                <p class="lang-en">Secure placements monitored safely via the Public Authority for Manpower rules[cite: 1].</p>
-                <p class="lang-am">በሕዝብ የሰው ኃይል ባለሥልጣን ደንብ መሠረት ጥበቃ የሚደረግለት የሥራ ቅጥር[cite: 1]።</p>
-                <p class="lang-ar">توظيف آمن ومراقب وفقًا للوائح الهيئة العامة للقوى العاملة[cite: 1].</p>
-            </div>
-        </div>
-    </section>
+<!-- Compliance & Authority Banner -->
+<div class="trust-banner pop-in">
+<h3>
+<span class="lang-en">✓ Legitimate, Licensed Legal Entity</span>
+<span class="lang-am">✓ ህጋዊ እና የተረጋገጠ የቅጥር ኤጀንሲ</span>
+<span class="lang-ar">✓ كيان قانوني معتمد ومرخص رسميًا</span>
+</h3>
+<p>
+<span class="lang-en">Fully compliant under Ethiopia's Overseas Employment Proclamations No. 923/2016 & 1246/2021[cite: 1]. Authorized by the Ministry of Labor[cite: 1].</span>
+<span class="lang-am">በኢትዮጵያ የውጪ ሀገር ሥራ ሥምሪት አዋጅ ቁጥር 923/2008 እና 1246/2013 መሰረት የተመዘገበ[cite: 1]።</span>
+<span class="lang-ar">متوافق تمامًا مع قوانين التوظيف الخارجي الإثيوبية رقم 923/2016 و 1246/2021[cite: 1].</span>
+</p>
+</div>
 
-    <!-- NEW SECTION: B2B Partner Portal & Process -->
-    <section class="container" style="background-color: rgba(13, 35, 39, 0.4); border-radius: 16px; border: 1px solid rgba(0, 191, 255, 0.1);">
-        <h2 class="section-title pop-in" style="padding-top: 30px;">
-            <span class="lang-en">B2B Gulf Partner Onboarding Process</span>
-            <span class="lang-am">ለባህረ ሰላጤው አጋሮች የተዘጋጀ ህጋዊ የስራ ሂደት</span>
-            <span class="lang-ar">إجراءات تسجيل وإلحاق الشركاء في الخليج</span>
-        </h2>
-        
-        <div class="grid-4" style="padding-bottom: 40px; padding-left: 15px; padding-right: 15px;">
-            <div class="card-step pop-in">
-                <div class="step-badge">Step 1</div>
-                <h4>
-                    <span class="lang-en">Agency Attestation</span>
-                    <span class="lang-am">ኤጀንሲ ማረጋገጫና ምስክርነት</span>
-                    <span class="lang-ar">توثيق الوكالة والاعتماد</span>
-                </h4>
-                <p class="lang-en">Verify the Gulf agency/sponsor via the Ethiopian Embassy. Generate and upload Job Orders onto the official E-LMIS platform.</p>
-                <p class="lang-am">የባህረ ሰላጤው ኤጀንሲ በኢትዮጵያ ኤምባሲ በኩል ይረጋገጣል። የፍላጎት ደብዳቤ በይፋዊው የኢ-LMIS መድረክ ላይ ይሰቀላል።</p>
-                <p class="lang-ar">التحقق من وكالة الخليج أو الكفيل عبر السفارة الإثيوبية. توليد ورفع تفويض العمل / طلب العمالة على منصة E-LMIS الحكومية.</p>
-            </div>
-            <div class="card-step pop-in">
-                <div class="step-badge">Step 2</div>
-                <h4>
-                    <span class="lang-en">Sourcing & E-LMIS</span>
-                    <span class="lang-am">ምልመላ እና ምዝገባ</span>
-                    <span class="lang-ar">الاستقطاب والتسجيل</span>
-                </h4>
-                <p class="lang-en">Source candidates legally. Candidates are fully registered in national Labour Systems and meet the 25-year-old minimum age rule.</p>
-                <p class="lang-am">ሰራተኞችን በህጋዊ መንገድ መመልመል። በሀገር አቀፍ የላብራቶሪ ሲስተም መመዝገብ እና የ 25 አመት እድሜ መሙላታቸውን ማረጋገጥ።</p>
-                <p class="lang-ar">استقطاب المرشحين قانونيًا. التأكد من تسجيلهم بنظام معلومات سوق العمل الوطني واستيفاء شرط السن (25 عامًا للعمالة المنزلية).</p>
-            </div>
-            <div class="card-step pop-in">
-                <div class="step-badge">Step 3</div>
-                <h4>
-                    <span class="lang-en">GAMCA & TVET Training</span>
-                    <span class="lang-am">የህክምና ምርመራ እና ስልጠና</span>
-                    <span class="lang-ar">الفحص الطبي والتدريب</span>
-                </h4>
-                <p class="lang-en">Candidates undergo official GAMCA medical fitness exams and complete 21-day mandatory TVET school training for their CoC.</p>
-                <p class="lang-am">እጩዎች ይፋዊ የጋምካ (GAMCA) የጤና ምርመራ ያደርጋሉ። ለብቃት ማረጋገጫ (CoC) የ 21 ቀናት አስገዳጅ ስልጠና በተረጋገጡ የቴክኒክና ሙያ ተቋማት ይወስዳሉ።</p>
-                <p class="lang-ar">يخضع المرشحون لفحوصات اللياقة الطبية المعتمدة (GAMCA). ويتمون التدريب الإلزامي لمدة 21 يومًا عبر معاهد TVET للحصول على شهادة الكفاءة (CoC).</p>
-            </div>
-            <div class="card-step pop-in">
-                <div class="step-badge">Step 4</div>
-                <h4>
-                    <span class="lang-en">Visa & Flight Logistics</span>
-                    <span class="lang-am">ቪዛ ስታምፕ እና በረራ</span>
-                    <span class="lang-ar">تأشير الفيزا وحجز الطيران</span>
-                </h4>
-                <p class="lang-en">Process visas via Tasheer / Enjaz / MoFA platforms per country (KSA, UAE, Qatar, Jordan). Flights booked via Ethiopian Airlines.</p>
-                <p class="lang-am">በየሀገሩ (ሳውዲ፣ ዱባይ፣ ኳታር፣ ጆርዳን) መሰረት በታሸር/ኤንጃዝ/ሞፋ ቪዛ ማስተናገድ። በረራዎች በኢትዮጵያ አየር መንገድ ብቻ ይያዛሉ።</p>
-                <p class="lang-ar">معالجة التأشيرات عبر منصات (تأشير / إنجاز / وزارة الخارجية) حسب الدولة (السعودية، الإمارات، قطر، الأردن). الحجز حصريًا عبر الخطوط الإثيوبية.</p>
-            </div>
-        </div>
-    </section>
+<h3 class="section-title pop-in">
+<span class="lang-en">Our Primary Destination Lanes</span>
+<span class="lang-am">ዋና ዋና የመዳረሻ ገበያዎቻችን</span>
+<span class="lang-ar">مسارات وجهاتنا الرئيسية</span>
+</h3>
 
-    <!-- NEW SECTION: Trust Features & MoLS Compliance Matrix -->
-    <section class="container">
-        <h2 class="section-title pop-in">
-            <span class="lang-en">Worker Readiness & Welfare Features</span>
-            <span class="lang-am">የሰራተኞች ዝግጁነት እና ደህንነት መገለጫዎች</span>
-            <span class="lang-ar">مزايا جاهزية العمالة ورعايتها</span>
-        </h2>
-        
-        <div class="table-responsive pop-in">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>What We Provide</th>
-                        <th>Why It Matters</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Language & Cultural Training</strong></td>
-                        <td>Basic Arabic, household vocabulary, and Middle Eastern cultural norms.</td>
-                        <td>Minimizes early-stage communication gaps.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Modern Appliances Training</strong></td>
-                        <td>Hands-on experience with washing machines, smart vacuums, microwaves, and ironers.</td>
-                        <td>Prevents accidental equipment damage.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CoC Certification</strong></td>
-                        <td>Compliance with the latest 2026 MoLS guidelines for technical qualification.</td>
-                        <td>Guarantees legal clearance for exit.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Post-Placement Support</strong></td>
-                        <td>Dedicated case officers who mediate between worker and employer over WhatsApp/Phone.</td>
-                        <td>Reduces absconding and protects worker welfare.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+<!-- Country Destinations & Flag Displays -->
+<div class="flags-lane pop-in">
+<div class="flag-card">
+<span class="flag-graphic">🇸🇦</span>
+<h4>Saudi Arabia[cite: 1]</h4>
+<p class="lang-en">Full electronic e-contract processing integration via the Musaned government platform[cite: 1].</p>
+<p class="lang-am">በሙሳነድ የኤሌክትሮኒክስ መድረክ በኩል የተሟላ የቪዛ እና የውል አሠራር[cite: 1]።</p>
+<p class="lang-ar">تكامل كامل لمعالجة العقود الإلكترونية عبر منصة مساند الحكومية[cite: 1].</p>
+</div>
+<div class="flag-card">
+<span class="flag-graphic">🇦🇪</span>
+<h4>United Arab Emirates[cite: 1]</h4>
+<p class="lang-en">Direct deployment lanes serving premium domestic help markets and commercial contracts[cite: 1].</p>
+<p class="lang-am">ለቤት ሰራተኞች እና ለተለያዩ የስራ ክፍሎች ቀጥተኛ የስራ ስምሪት መላኪያ መስመር[cite: 1]።</p>
+<p class="lang-ar">مسارات توظيف مباشرة تخدم أسواق العمل المنزلي والتجاري المميز[cite: 1].</p>
+</div>
+<div class="flag-card">
+<span class="flag-graphic">🇰🇼</span>
+<h4>Kuwait[cite: 1]</h4>
+<p class="lang-en">Secure placements monitored safely via the Public Authority for Manpower rules[cite: 1].</p>
+<p class="lang-am">በሕዝብ የሰው ኃይል ባለሥልጣን ደንብ መሠረት ጥበቃ የሚደረግለት የሥራ ቅጥር[cite: 1]።</p>
+<p class="lang-ar">توظيف آمن ومراقب وفقًا للوائح الهيئة العامة للقوى العاملة[cite: 1].</p>
+</div>
+</div>
+</section>
 
-    <!-- Fixed Footer -->
-    <footer>
-        <h3 class="pop-in">BORENA FOREIGN EMPLOYMENT AGENT PLC[cite: 1]</h3>
-        
-        <!-- 1-Click High Conversion Footer WhatsApp Button -->
-        <div class="pop-in">
-            <a href="https://wa.me/251908104444" target="_blank" class="btn-whatsapp-footer">
-                <i class="fab fa-whatsapp"></i>
-                <span class="lang-en">Connect Instantly via WhatsApp</span>
-                <span class="lang-am">በዋትስአፕ በቀጥታ ይገናኙን</span>
-                <span class="lang-ar">تواصل معنا فورًا عبر الواتساب</span>
-            </a>
-        </div>
+<!-- NEW SECTION: B2B Partner Portal & Process -->
+<section class="container" style="background-color: rgba(13, 35, 39, 0.4); border-radius: 16px; border: 1px solid rgba(0, 191, 255, 0.1);">
+<h2 class="section-title pop-in" style="padding-top: 30px;">
+<span class="lang-en">B2B Gulf Partner Onboarding Process</span>
+<span class="lang-am">ለባህረ ሰላጤው አጋሮች የተዘጋጀ ህጋዊ የስራ ሂደት</span>
+<span class="lang-ar">إجراءات تسجيل وإلحاق الشركاء في الخليج</span>
+</h2>
 
-        <p class="pop-in">
-            <span class="lang-en">Arada Sub City, Woreda 05, House No. 82, Kebele 845, Addis Ababa, Ethiopia[cite: 1]</span>
-            <span class="lang-am">አራዳ ክፍለ ከተማ፣ ወረዳ 05፣ የቤት ቁጥር 82፣ ቀበሌ 845፣ አዲስ አበባ፣ ኢትዮጵያ[cite: 1]</span>
-            <span class="lang-ar">منطقة أرادا الفرعية، وريدا 05، منزل رقم 82، كبيلي 845، أديس أبابا، إثيوبيا[cite: 1]</span>
-        </p>
-        
-        <p class="pop-in" style="margin-top: 25px; font-size: 1.1rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
-            <span>
-                <i class="fas fa-phone" style="color: var(--neon-blue-green);"></i> <b>Phone / Channels:</b> 
-                <a href="tel:0908104444" class="footer-contact-link">0908 10 44 44</a>[cite: 1]
-            </span>
-            <span>
-                <i class="fas fa-envelope" style="color: var(--neon-blue-green);"></i> <b>Email Address:</b> 
-                <a href="mailto:borenaa516@gmail.com" class="footer-contact-link">borenaa516@gmail.com</a>[cite: 1]
-            </span>
-        </p>
+<div class="grid-4" style="padding-bottom: 40px; padding-left: 15px; padding-right: 15px;">
+<div class="card-step pop-in">
+<div class="step-badge">Step 1</div>
+<h4>
+<span class="lang-en">Agency Attestation</span>
+<span class="lang-am">ኤጀንሲ ማረጋገጫና ምስክርነት</span>
+<span class="lang-ar">توثيق الوكالة والاعتماد</span>
+</h4>
+<p class="lang-en">Verify the Gulf agency/sponsor via the Ethiopian Embassy. Generate and upload Job Orders onto the official E-LMIS platform.</p>
+<p class="lang-am">የባህረ ሰላጤው ኤጀንሲ በኢትዮጵያ ኤምባሲ በኩል ይረጋገጣል። የፍላጎት ደብዳቤ በይፋዊው የኢ-LMIS መድረክ ላይ ይሰቀላል።</p>
+<p class="lang-ar">التحقق من وكالة الخليج أو الكفيل عبر السفارة الإثيوبية. توليد ورفع تفويض العمل / طلب العمالة على منصة E-LMIS الحكومية.</p>
+</div>
+<div class="card-step pop-in">
+<div class="step-badge">Step 2</div>
+<h4>
+<span class="lang-en">Sourcing & E-LMIS</span>
+<span class="lang-am">ምልመላ እና ምዝገባ</span>
+<span class="lang-ar">الاستقطاب والتسجيل</span>
+</h4>
+<p class="lang-en">Source candidates legally. Candidates are fully registered in national Labour Systems and meet the 25-year-old minimum age rule.</p>
+<p class="lang-am">ሰራተኞችን በህጋዊ መንገድ መመልመል። በሀገር አቀፍ የላብራቶሪ ሲስተም መመዝገብ እና የ 25 አመት እድሜ መሙላታቸውን ማረጋገጥ።</p>
+<p class="lang-ar">استقطاب المرشحين قانونيًا. التأكد من تسجيلهم بنظام معلومات سوق العمل الوطني واستيفاء شرط السن (25 عامًا للعمالة المنزلية).</p>
+</div>
+<div class="card-step pop-in">
+<div class="step-badge">Step 3</div>
+<h4>
+<span class="lang-en">GAMCA & TVET Training</span>
+<span class="lang-am">የህክምና ምርመራ እና ስልጠና</span>
+<span class="lang-ar">الفحص الطبي والتدريب</span>
+</h4>
+<p class="lang-en">Candidates undergo official GAMCA medical fitness exams and complete 21-day mandatory TVET school training for their CoC.</p>
+<p class="lang-am">እጩዎች ይፋዊ የጋምካ (GAMCA) የጤና ምርመራ ያደርጋሉ። ለብቃት ማረጋገጫ (CoC) የ 21 ቀናት አስገዳጅ ስልጠና በተረጋገጡ የቴክኒክና ሙያ ተቋማት ይወስዳሉ።</p>
+<p class="lang-ar">يخضع المرشحون لفحوصات اللياقة الطبية المعتمدة (GAMCA). ويتمون التدريب الإلزامي لمدة 21 يومًا عبر معاهد TVET للحصول على شهادة الكفاءة (CoC).</p>
+</div>
+<div class="card-step pop-in">
+<div class="step-badge">Step 4</div>
+<h4>
+<span class="lang-en">Visa & Flight Logistics</span>
+<span class="lang-am">ቪዛ ስታምፕ እና በረራ</span>
+<span class="lang-ar">تأشير الفيزا وحجز الطيران</span>
+</h4>
+<p class="lang-en">Process visas via Tasheer / Enjaz / MoFA platforms per country (KSA, UAE, Qatar, Jordan). Flights booked via Ethiopian Airlines.</p>
+<p class="lang-am">በየሀገሩ (ሳውዲ፣ ዱባይ፣ ኳታር፣ ጆርዳን) መሰረት በታሸር/ኤንጃዝ/ሞፋ ቪዛ ማስተናገድ። በረራዎች በኢትዮጵያ አየር መንገድ ብቻ ይያዛሉ።</p>
+<p class="lang-ar">معالجة التأشيرات عبر منصات (تأشير / إنجاز / وزارة الخارجية) حسب الدولة (السعودية، الإمارات، قطر، الأردن). الحجز حصريًا عبر الخطوط الإثيوبية.</p>
+</div>
+</div>
+</section>
 
-        <!-- Footer Visual Channel Icons Grid -->
-        <div class="pop-in" style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
-            <a href="https://wa.me/251908104444" target="_blank" class="icon-btn" style="font-size: 1.8rem;"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/0908104444" target="_blank" class="icon-btn" style="font-size: 1.8rem;"><i class="fab fa-telegram"></i></a>
-        </div>
-    </footer>
+<!-- NEW SECTION: Trust Features & MoLS Compliance Matrix -->
+<section class="container">
+<h2 class="section-title pop-in">
+<span class="lang-en">Worker Readiness & Welfare Features</span>
+<span class="lang-am">የሰራተኞች ዝግጁነት እና ደህንነት መገለጫዎች</span>
+<span class="lang-ar">مزايا جاهزية العمالة ورعايتها</span>
+</h2>
 
-    <!-- Javascript Animation Control and Switching Engine -->
-    <script>
-        function changeLanguage() {
-            const lang = document.getElementById('languageToggle').value;
-            document.body.className = ''; 
-            if (lang !== 'en') {
-                document.body.classList.add(lang);
-            }
-        }
+<div class="table-responsive pop-in">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What We Provide</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Language & Cultural Training</strong></td>
+<td>Basic Arabic, household vocabulary, and Middle Eastern cultural norms.</td>
+<td>Minimizes early-stage communication gaps.</td>
+</tr>
+<tr>
+<td><strong>Modern Appliances Training</strong></td>
+<td>Hands-on experience with washing machines, smart vacuums, microwaves, and ironers.</td>
+<td>Prevents accidental equipment damage.</td>
+</tr>
+<tr>
+<td><strong>CoC Certification</strong></td>
+<td>Compliance with the latest 2026 MoLS guidelines for technical qualification.</td>
+<td>Guarantees legal clearance for exit.</td>
+</tr>
+<tr>
+<td><strong>Post-Placement Support</strong></td>
+<td>Dedicated case officers who mediate between worker and employer over WhatsApp/Phone.</td>
+<td>Reduces absconding and protects worker welfare.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.12
-            };
+<!-- Fixed Footer -->
+<footer>
+<h3 class="pop-in">BORENA FOREIGN EMPLOYMENT AGENT PLC[cite: 1]</h3>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible'); 
-                    }
-                });
-            }, observerOptions);
+<!-- 1-Click High Conversion Footer WhatsApp Button -->
+<div class="pop-in">
+<a href="https://wa.me/251908104444" target="_blank" class="btn-whatsapp-footer">
+<i class="fab fa-whatsapp"></i>
+<span class="lang-en">Connect Instantly via WhatsApp</span>
+<span class="lang-am">በዋትስአፕ በቀጥታ ይገናኙን</span>
+<span class="lang-ar">تواصل معنا فورًا عبر الواتساب</span>
+</a>
+</div>
 
-            const popElements = document.querySelectorAll('.pop-in');
-            popElements.forEach(el => observer.observe(el));
-        });
-    </script>
+<p class="pop-in">
+<span class="lang-en">Arada Sub City, Woreda 05, House No. 82, Kebele 845, Addis Ababa, Ethiopia[cite: 1]</span>
+<span class="lang-am">አራዳ ክፍለ ከተማ፣ ወረዳ 05፣ የቤት ቁጥር 82፣ ቀበሌ 845፣ አዲስ አበባ፣ ኢትዮጵያ[cite: 1]</span>
+<span class="lang-ar">منطقة أرادا الفرعية، وريدا 05، منزل رقم 82، كبيلي 845، أديس أبابا، إثيوبيا[cite: 1]</span>
+</p>
+
+<p class="pop-in" style="margin-top: 25px; font-size: 1.1rem; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+<span>
+<i class="fas fa-phone" style="color: var(--neon-blue-green);"></i> <b>Phone / Channels:</b>
+<a href="tel:0908104444" class="footer-contact-link">0908 10 44 44</a>[cite: 1]
+</span>
+<span>
+<i class="fas fa-envelope" style="color: var(--neon-blue-green);"></i> <b>Email Address:</b>
+<a href="mailto:borenaa516@gmail.com" class="footer-contact-link">borenaa516@gmail.com</a>[cite: 1]
+</span>
+</p>
+
+<!-- Footer Visual Channel Icons Grid -->
+<div class="pop-in" style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+<a href="https://wa.me/251908104444" target="_blank" class="icon-btn" style="font-size: 1.8rem;" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://t.me/0908104444" target="_blank" class="icon-btn" style="font-size: 1.8rem;" title="Telegram Channel"><i class="fab fa-telegram"></i></a>
+<a href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" class="icon-btn" style="font-size: 1.8rem;" title="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+</footer>
+
+<!-- Javascript Animation Control and Switching Engine -->
+<script>
+function changeLanguage() {
+const lang = document.getElementById('languageToggle').value;
+document.body.className = '';
+if (lang !== 'en') {
+document.body.classList.add(lang);
+}
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+const observerOptions = {
+root: null,
+rootMargin: '0px',
+threshold: 0.12
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+} else {
+entry.target.classList.remove('visible');
+}
+});
+}, observerOptions);
+
+const popElements = document.querySelectorAll('.pop-in');
+popElements.forEach(el => observer.observe(el));
+});
+</script>
 </body>
 </html>
